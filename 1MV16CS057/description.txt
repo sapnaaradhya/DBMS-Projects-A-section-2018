@@ -1,0 +1,6 @@
+Staff Information System
+
+by Nasir Basha K
+USN 1MV16CS057
+
+To get the details of a particular teacher at that instance of time.
