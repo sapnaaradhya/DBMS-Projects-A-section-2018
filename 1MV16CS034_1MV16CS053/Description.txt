@@ -1,6 +1,7 @@
                                  DBMS Project
                                  
-Title - Local Guardian Information System
+Title - Local Guardian Information System.
+	=================================
 
 Team Members - Harshitha S.V (1MV16CS034)
              - M.G.N.S.Suma  (1MV16CS053)
