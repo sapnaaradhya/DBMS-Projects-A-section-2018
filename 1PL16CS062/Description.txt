@@ -1,0 +1,10 @@
+---------------------------------
+SECURED STORAGE SYSTEM
+---------------------------------
+
+This project is a file storage system which is authenticated using unique details of every user.
+A user can perform following operations in the system:
+
+1. Upload a new file in database.
+2. Delete an existing file from the database.
+3. Download the file from the database.
