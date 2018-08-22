@@ -1,6 +1,6 @@
 									DBMS  PROJECT
 
-TITLE   :   local Guardian manageent system
+TITLE   :   local Guardian management system
 
 MEMBERS   :   1MV16CS034
 	         1MV16CS053
@@ -9,7 +9,7 @@ MEMBERS   :   1MV16CS034
 DESCRIPTION  :-
 
 	1. PURPOSE :- The objective of local guardian management system is the web application that is to allow the faculties to edit and find out the personal details of a student and allow the student to keep up to date his/her profile.
- It will also facilitate keeping all the records of stdents, such as their id, name, mail, address, phone number, internal and external marks and attendance.
+ It will also facilitate keeping all the records of students, such as their id, name, mail, address, phone number, internal and external marks and attendance.
 
 	2. SCOPE :-  login module : login module will help in authentication of user accounts. User who have valid login id and password can only login into their respective accounts.
 
