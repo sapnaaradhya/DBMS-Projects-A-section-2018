@@ -1,1 +1,8 @@
 Theatre Management
+
+USN : 1MV16CS029(Dhavan R)
+      1MV16CS027(Deepthi Kumar)
+
+Description
+
+To book tickets and learn about the upcoming movies.
