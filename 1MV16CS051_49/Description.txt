@@ -1,0 +1,12 @@
+SPORTS MANAGEMENT SYSTEM:
+-----------------------------
+
+A database system that holds information regarding students from various universities and the sport events those are available for participation. 
+It aims at reducing the time and complexity involved with the current redundant system of managing such information physically on papers.
+It should ideally reduce the registration time for various events and also keep a detailed log of events happened and to happen.
+This system will find huge application because nowadays all universities actively participate and promote sport meets.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Mohammed Adil Baig (1MV16CS051)
+Madhuvanthi Ramesh (1MV16CS049)
