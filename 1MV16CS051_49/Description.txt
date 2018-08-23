@@ -1,5 +1,5 @@
 SPORTS MANAGEMENT SYSTEM:
--------------------------------------------------
+-----------------------------
 
 A database system that holds information regarding students from various universities and the sport events those are available for participation. 
 It aims at reducing the time and complexity involved with the current redundant system of managing such information physically on papers.
