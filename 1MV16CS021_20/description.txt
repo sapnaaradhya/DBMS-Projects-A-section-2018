@@ -1,0 +1,5 @@
+ELECTION MANAGEMENT SYSTEM
+
+This project is made in order to manage data of voters and leaders.
+
+1MV16CS021,1MV16CS020 
