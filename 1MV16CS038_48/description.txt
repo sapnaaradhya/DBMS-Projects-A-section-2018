@@ -1,6 +1,6 @@
 Title : Student Record System
 
-Team : Drithika Premika
+Team : Drithika and Premika
 
 Description : Student Record System is database system ,
 	which is used mainly by faculty for maintaing records of student of each semester .
