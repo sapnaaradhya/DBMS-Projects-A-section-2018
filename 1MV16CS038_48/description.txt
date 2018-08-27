@@ -1,0 +1,10 @@
+Title : Student Record System
+
+Team : Drithika Premika
+
+Description : Student Record System is database system ,
+	which is used mainly by faculty for maintaing records of student of each semester .
+
+	This includes tables namely "SEMESTER" ,"BRANCH","SECTION","SUBJECT" ,"STUDENT_NAME" and "RECORD_OF_THE_STUDENT",
+	which requires teachers login.
+Its mainly like a report card prepared by teachers for their use.
