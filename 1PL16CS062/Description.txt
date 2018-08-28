@@ -1,10 +1,11 @@
 ---------------------------------
-SECURED STORAGE SYSTEM
+STUDENT INFORMATION SYSTEM
 ---------------------------------
 
-This project is a file storage system which is authenticated using unique details of every user.
-A user can perform following operations in the system:
+This project is a Student Information Management System which is authenticated by an administrator.
+A user can see the details of a student from the landing page of the system.
 
-1. Upload a new file in database.
-2. Delete an existing file from the database.
-3. Download the file from the database.
+The administrator can perform following operations:
+1. Add information of a student in the database.
+2. Update the information of a student in the database.
+3. Delete a student information from the database.
