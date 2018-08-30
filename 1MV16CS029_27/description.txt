@@ -6,3 +6,8 @@ USN : 1MV16CS029(Dhavan R)
 Description
 
 To book tickets and learn about the upcoming movies.
+
+A ticket booking site that allows the user to check the seats available and book seats at same time.
+Users can make prior bookings of their desired seats according to suitable time and price comfortable by the user.
+Users can also cancel their bookings or book a tickets at a differnt time slot.
+A system that is user friendly and customize their bookings according to their needs. 
