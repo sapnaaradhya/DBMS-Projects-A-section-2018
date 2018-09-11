@@ -1,1 +1,15 @@
-DBMS PROJECT 2018!!!
+				
+				!!!!!! HACKATHON ARENA DATABASE !!!!
+
+A Database created to manage the Latest hackathons happening in and around the country.
+This Database contains various entities and relationships as decribed in the attached ER_diagram.
+It manages the complete details of the hackathon such as the venues , sponsors , winners , etc.. and the applicants who have RSVP'D for it.
+
+REASON FOR DEVELOPMENT:
+
+Most Hackathons are organised and promoted through individual Websites and so intrested participants 
+have no access to any sort of portal to keep track or retrieve data pertaining to all te hackathons being conducted.
+
+Hence this DBMS project will eliminate this ambiguity amongst the applicants and serve them the purpose.
+
+Also the sponsors can keep track of the number of hackathons they have sponsored and pick the best Talents from the crowd.
