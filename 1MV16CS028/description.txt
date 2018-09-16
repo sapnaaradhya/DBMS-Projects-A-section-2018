@@ -1,0 +1,7 @@
+college event registration management 
+by
+1mv16cs028
+and 1mv16cs008
+
+
+technologies used- html ,css, javascript and mysql
