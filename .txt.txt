@@ -1,9 +1,0 @@
-usn: 1mv16cs022,1mv16cs011
-Name: B S SMRUTHI SHREEYA,AMIKA KUMAWAT
-
-PROJECT NAME: MUSEUM MANAGEMENT SYSTEM
-
-DESCRIPTION:
-
-A database system that holds information regarding museum artifacts and their management.
-A system holding entire information of artists,origin,significance of each artifact.
