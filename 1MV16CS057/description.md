@@ -1,7 +1,7 @@
-				Staff Information System
+   # Staff Information System
 
-by Nasir Basha K
-USN 1MV16CS057
+# Nasir Basha K
+- 1MV16CS057
 
 To get the details and status of the particular teacher at that instance of time.
 There is an ADMIN login, who controls the staff or TEACHERS.The admin has to register himself with his Email and password.
