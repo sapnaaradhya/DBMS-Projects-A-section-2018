@@ -112,7 +112,7 @@ public class login extends javax.swing.JFrame {
         );
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setText("CANCEL");
+        jButton3.setText("EXIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -187,14 +187,44 @@ public class login extends javax.swing.JFrame {
         String username=jTextField1.getText();
         String password=jPasswordField1.getText();
         String query="Select username,password from admin where username=? and password=?";
-        
         PreparedStatement pst=con.prepareStatement(query);
-        ResultSet rs;
         try {
-            rs =pst.executeQuery();
+            pst.setString(1,jTextField1.getText());
         } catch (SQLException ex) {
             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        try {
+            pst.setString(2,jPasswordField1.getText());
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs = null;
+        try {
+            rs = pst.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            if(rs.next())
+            {
+                jTextField1.setText(null);
+                jPasswordField1.setText(null);
+                signup s=new signup();
+                s.setVisible(true);
+               
+            }
+            else
+            {
+                jTextField1.setText(null);
+                jPasswordField1.setText(null);
+                JOptionPane.showMessageDialog(null, "invalid username or password");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+
        
         
         

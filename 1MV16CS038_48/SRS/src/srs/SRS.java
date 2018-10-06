@@ -16,11 +16,11 @@ public class SRS {
         
 }
 
-class Con {
+class SqlDao {
 
     Connection con = null;
 
-    public Con() {
+    public SqlDao() {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -31,6 +31,7 @@ class Con {
         }
         
     }
+    
     
 }
 
