@@ -11,12 +11,15 @@ exports.signup = function(req, res){
       var name= post.name;
       var mob= post.mob_no;
 
-      var sql = "INSERT INTO `users`(`fact_name`,`name`,`mob_no`,`email`, `password`) VALUES ('" + fname + "','" + name + "','" + mob + "','" + email + "','" + pass + "')";
+      var sql = "INSERT INTO `factory_table`(`fact_name`,`name`,`mob_no`,`email`, `password`) VALUES ('" + fname + "','" + name + "','" + mob + "','" + email + "','" + pass + "')";
 console.log(sql);
       var query = db.query(sql, function(err, result) {
+        if(err)
+        console.log(err);
 
-         message = "Succesfully! Your account has been created.";
-         res.render('signup.ejs',{message: message});
+         message = "Succesfull! Your account has been created.Please login";
+	console.log(result);
+         res.render('index.ejs',{message: message});
       });
 
    } else {
@@ -35,9 +38,10 @@ exports.login = function(req, res){
       var email= post.email;
       var pass= post.password;
 
-      var sql="SELECT id, fact_name, name, email FROM `users` WHERE `email`='"+email+"' and password = '"+pass+"'";
+      var sql="SELECT id, fact_name, name, email FROM `factory_table` WHERE `email`='"+email+"' and password = '"+pass+"'";
       db.query(sql, function(err, results){
         if(err) throw err;
+        console.log(results)
          if(results.length){
             req.session.userId = results[0].id;
             req.session.user = results[0];
@@ -67,7 +71,7 @@ exports.dashboard = function(req, res, next){
       return;
    }
 
-   var sql="SELECT * FROM `users` WHERE `id`='"+userId+"'";
+   var sql="SELECT * FROM `factory_table` WHERE `id`='"+userId+"'";
 
    db.query(sql, function(err, results){
       res.render('dashboard.ejs', {user:user});
@@ -79,6 +83,93 @@ exports.logout=function(req,res){
       res.redirect("/login");
    })
 };
+exports.delete_product=function(req,res){
+  var userId = req.session.userId;
+
+
+};
+exports.product=function(req,res){
+var userId = req.session.userId;
+if(req.method == "POST")
+{
+    var post  = req.body;
+  var product_name = post.product_name;
+  var cost = post.cost;
+  console.log("posted");
+  var sql = "INSERT INTO `products`(`id`,`product_name`,`cost`) VALUES ('" + userId + "','" + product_name + "','" + cost + "')";
+  console.log(sql);
+  var query = db.query(sql, function(err, result) {
+  //  if(err)
+    //console.log(err);
+});
+//     message = "Succesfull! Your account has been created.Please login";
+//  console.log(result);
+  //  res.render('dashboard.ejs');
+    //exports.product();
+}
+
+
+     var sql="SELECT * FROM `products` WHERE `id`='"+userId+"'";
+     db.query(sql, function(err, result){
+       console.log(result);
+       console.log(result[0]);
+       console.log("length="+result.length);
+       if(result.length)
+       console.log(result[0].product_id);
+       res.render('product.ejs', {result:result});
+
+     });
+  if(userId == null){
+     res.redirect("/login");
+     return;
+  }
+
+  };
+
+//----------------------------customers-------------------------------------------------------------
+  exports.customers=function(req,res){
+  var userId = req.session.userId;
+  if(req.method == "POST")
+  {
+      var post  = req.body;
+    var customer_name = post.customer_name;
+    var product_quantity = post.product_quantity;
+    var month  = post.month;
+    var transportation_cost = post.transportation_cost;
+    var bill_amount = post.bill_amount;
+
+
+    console.log("posted");
+    var sql = "INSERT INTO `customers`(`id`,`customer_name`,`product_quantity`,`month`,`transportation_cost`,`bill_amount`) VALUES ('" + userId + "','" + customer_name + "','" + product_quantity + "','" + month  + "','"+transportation_cost + "','" + bill_amount+"')";
+    console.log(sql);
+    var query = db.query(sql, function(err, result) {
+    //  if(err)
+      //console.log(err);
+  });
+  //     message = "Succesfull! Your account has been created.Please login";
+  //  console.log(result);
+    //  res.render('dashboard.ejs');
+      //exports.product();
+  }
+
+
+       var sql="SELECT * FROM `customers` WHERE `id`='"+userId+"'";
+       db.query(sql, function(err, result){
+         console.log(result);
+         console.log(result[0]);
+         console.log("length="+result.length);
+         //if(result.length)
+         //console.log(result[0].product_id);
+         res.render('customers.ejs', {result:result});
+
+       });
+    if(userId == null){
+       res.redirect("/login");
+       return;
+    }
+
+    };
+
 //--------------------------------render user details after login--------------------------------
 exports.profile = function(req, res){
 
@@ -88,12 +179,12 @@ exports.profile = function(req, res){
       return;
    }
 
-   var sql="SELECT * FROM `users` WHERE `id`='"+userId+"'";
+   var sql="SELECT * FROM `factory_table` WHERE `id`='"+userId+"'";
    db.query(sql, function(err, result){
       res.render('profile.ejs',{data:result});
    });
 };
-//---------------------------------edit users details after login----------------------------------
+//---------------------------------edit factory_table details after login----------------------------------
 exports.editprofile=function(req,res){
    var userId = req.session.userId;
    if(userId == null){
@@ -101,7 +192,7 @@ exports.editprofile=function(req,res){
       return;
    }
 
-   var sql="SELECT * FROM `users` WHERE `id`='"+userId+"'";
+   var sql="SELECT * FROM `factory_table` WHERE `id`='"+userId+"'";
    db.query(sql, function(err, results){
       res.render('edit_profile.ejs',{data:results});
    });

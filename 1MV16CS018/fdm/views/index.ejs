@@ -23,9 +23,16 @@
                     </div>
 
                     <div style="padding-top:30px" class="panel-body" >
-                                                                        <% if (message.length > 0) { %>
-                                                                                    <div class="alert alert-danger col-sm-12"><%= message %></div>
-                                                                        <% } %>
+                                                                        <% if (message.length > 30) { %>
+                                                                                    <div class="alert alert-success col-sm-12"><%= message %></div>
+
+                                                                        <%} else { %>
+
+                                                                          <% if (message.length > 10) { %>
+
+                                                                          <div class="alert alert-danger col-sm-12"><%= message %></div>
+                                                                          <% } %>
+                                                                          <% } %>
 
                         <form id="loginform" class="form-horizontal" role="form" method="post" action="/login">
 
