@@ -17,11 +17,12 @@
        <tr>
          <td><%= result[i].product_name %></td>
          <td><%= result[i].cost %></td>
-         <td><button id="<%= result[i].product_id %>" href="/home/delete_product" type="button" class="btn btn-danger btn-xs">Delete</button></td>
+         <td><a id= "<%= result[i].product_id %>" href="/home/delete_product?id= <%= result[i].product_id %>" >Delete</a></td>
        </tr>
     <% } %>
   </tbody>
 </table>
+
 
         <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 

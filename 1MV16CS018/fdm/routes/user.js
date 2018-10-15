@@ -18,7 +18,7 @@ console.log(sql);
         console.log(err);
 
          message = "Succesfull! Your account has been created.Please login";
-	console.log(result);
+	//console.log(result);
          res.render('index.ejs',{message: message});
       });
 
@@ -41,11 +41,11 @@ exports.login = function(req, res){
       var sql="SELECT id, fact_name, name, email FROM `factory_table` WHERE `email`='"+email+"' and password = '"+pass+"'";
       db.query(sql, function(err, results){
         if(err) throw err;
-        console.log(results)
+      //  console.log(results)
          if(results.length){
             req.session.userId = results[0].id;
             req.session.user = results[0];
-            console.log(results[0].id);
+          //  console.log(results[0].id);
             res.redirect('/home/dashboard');
          }
          else{
@@ -65,7 +65,7 @@ exports.dashboard = function(req, res, next){
 
    var user =  req.session.user,
    userId = req.session.userId;
-   console.log('fact_user='+userId);
+  // console.log('fact_user='+userId);
    if(userId == null){
       res.redirect("/login");
       return;
@@ -83,8 +83,62 @@ exports.logout=function(req,res){
       res.redirect("/login");
    })
 };
+exports.delete_customer=function(req,res){
+  var userId = req.session.userId;
+  var customer_id = req.query.id;
+//  console.log("product="+product_id);
+  var sql="DELETE FROM `customers` WHERE `customer_id` ='"+ customer_id+"'";
+console.log(sql);
+  db.query(sql, function(err, result){
+    console.log(result);
+    console.log(result[0]);
+// exports.product();
+  });
+  var sql="SELECT * FROM `customers` WHERE `id`='"+userId+"'";
+  db.query(sql, function(err, result){
+ //   console.log(result);
+ //   console.log(result[0]);
+ //   console.log("length="+result.length);
+    //if(result.length)
+    //console.log(result[0].product_id);
+    res.render('customers.ejs', {result:result});
+
+  });
+
+ if(userId == null){
+  res.redirect("/login");
+  return;
+ }
+
+
+};
+
 exports.delete_product=function(req,res){
   var userId = req.session.userId;
+  var product_id = req.query.id;
+  console.log("product="+product_id);
+  var sql="DELETE FROM `products` WHERE `product_id` ='"+ product_id+"'";
+console.log(sql);
+  db.query(sql, function(err, result){
+    console.log(result);
+    console.log(result[0]);
+// exports.product();
+  });
+  var sql="SELECT * FROM `products` WHERE `id`='"+userId+"'";
+  db.query(sql, function(err, result){
+   // console.log(result);
+   // console.log(result[0]);
+    //console.log("length="+result.length);
+    //if(result.length)
+    //console.log(result[0].product_id);
+    res.render('product.ejs', {result:result});
+
+  });
+
+ if(userId == null){
+  res.redirect("/login");
+  return;
+ }
 
 
 };
@@ -111,11 +165,11 @@ if(req.method == "POST")
 
      var sql="SELECT * FROM `products` WHERE `id`='"+userId+"'";
      db.query(sql, function(err, result){
-       console.log(result);
-       console.log(result[0]);
-       console.log("length="+result.length);
-       if(result.length)
-       console.log(result[0].product_id);
+      // console.log(result);
+      // console.log(result[0]);
+       //console.log("length="+result.length);
+       //if(result.length)
+       //console.log(result[0].product_id);
        res.render('product.ejs', {result:result});
 
      });
@@ -155,9 +209,9 @@ if(req.method == "POST")
 
        var sql="SELECT * FROM `customers` WHERE `id`='"+userId+"'";
        db.query(sql, function(err, result){
-         console.log(result);
-         console.log(result[0]);
-         console.log("length="+result.length);
+      //   console.log(result);
+      //   console.log(result[0]);
+      //   console.log("length="+result.length);
          //if(result.length)
          //console.log(result[0].product_id);
          res.render('customers.ejs', {result:result});

@@ -24,7 +24,7 @@
          <td><%= result[i].month %></td>
          <td><%= result[i].transportation_cost %></td>
          <td><%= result[i].bill_amount %></td>
-         <td><button href="/home/delete_customer" type="button" class="btn btn-danger btn-xs">Delete</button></td>
+         <td><a id= "<%= result[i].customer_id %>" href="/home/delete_customer?id= <%= result[i].customer_id %>" >Delete</a></td>
 
 
        </tr>

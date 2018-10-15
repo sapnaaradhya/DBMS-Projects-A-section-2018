@@ -52,6 +52,7 @@ app.post('/home/product', user.product);
 app.get('/home/customers', user.customers);
 app.post('/home/customers', user.customers);
 app.get('/home/delete_product', user.delete_product);
+app.get('/home/delete_customer', user.delete_customer);
 
 
 
