@@ -9,18 +9,6 @@ public class SRS {
         // TODO code application logic here
 
         SqlDao obj = new SqlDao();
-//        obj.createTableAdmin();
-
-        //obj.createTableStudent();
-        obj.createTableCourse();
-        obj.createTableBranch();
-        //obj.createTableFees();
-        obj.createTableStudent();
-        obj.createTableFees();
-        obj.createTableFaculty();
-        obj.createTableExams();
-
-    }
 
 }
 
@@ -32,7 +20,6 @@ class SqlDao {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/srs", "root", "premi");
 
         } catch (Exception ex) {
             System.out.println(ex);
@@ -45,14 +32,15 @@ class SqlDao {
         String sql = "CREATE TABLE IF NOT EXISTS ADMIN\n"
                 + "(NAME VARCHAR(15) NOT NULL,\n"
                 + "USER_NAME VARCHAR(15),\n"
-                + "PASSWORD VARCHAR(8) NOT NULL,\n"
+                + "PASSWORD VARCHAR(15) NOT NULL,\n"
                 + "CONSTRAINT PF_UN PRIMARY KEY(USER_NAME));";
 
         Statement st = con.createStatement();
         st.execute(sql);
-        con.close();
+        
         return true;
     }
+
 
     public boolean createTableCourse() throws SQLException {
         String sql2 = "CREATE TABLE IF NOT EXISTS COURSE(\n"
