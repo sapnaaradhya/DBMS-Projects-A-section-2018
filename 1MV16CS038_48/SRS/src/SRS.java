@@ -1,28 +1,15 @@
 
-
-
 import com.mysql.jdbc.jdbc2.optional.PreparedStatementWrapper;
 import java.sql.*;
 import java.util.Scanner;
+
 public class SRS {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         // TODO code application logic here
-        
-        SqlDao obj = new SqlDao();
-        obj.createTableAdmin();
-        obj.createTableCourse();
-        obj.createTableBranch();
-        obj.createTableStudent();
-        obj.createTableFees();
-        obj.createTableFaculty();
-        obj.createTableExams();
-       
-     
-    }       
-        
 
-        
+        SqlDao obj = new SqlDao();
+
 }
 
 class SqlDao {
@@ -33,30 +20,29 @@ class SqlDao {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/srs", "root", "dolly");
-            
+
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        
+
     }
-    
-    public boolean createTableAdmin() throws SQLException{
-        
-        
-        String sql="CREATE TABLE IF NOT EXISTS ADMIN\n"
+
+    public boolean createTableAdmin() throws SQLException {
+
+        String sql = "CREATE TABLE IF NOT EXISTS ADMIN\n"
                 + "(NAME VARCHAR(15) NOT NULL,\n"
                 + "USER_NAME VARCHAR(15),\n"
                 + "PASSWORD VARCHAR(15) NOT NULL,\n"
                 + "CONSTRAINT PF_UN PRIMARY KEY(USER_NAME));";
-        
+
         Statement st = con.createStatement();
         st.execute(sql);
         
         return true;
     }
 
-public boolean createTableCourse() throws SQLException {
+
+    public boolean createTableCourse() throws SQLException {
         String sql2 = "CREATE TABLE IF NOT EXISTS COURSE(\n"
                 + "COURSE_ID INT(2)NOT NULL,\n"
                 + "COURSE_NAME VARCHAR(9) NOT NULL,\n"
@@ -174,26 +160,21 @@ public boolean createTableCourse() throws SQLException {
         st6.execute(sql6);
         //con.close();
         return true;
-    }    
-    
-   public int insertAdmin(String name,String uname ,String pass) throws SQLException{
-       
-       
-       String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
-       
-       PreparedStatement ps = con.prepareStatement(sql);
-       
-       ps.setString(1, name);
-       ps.setString(2, uname);
-       ps.setString(3, pass);
-       
-       int n=ps.executeUpdate();
-       
-       return n;
-   } 
-   
-    
+    }
+
+    public int insertAdmin(String name, String uname, String pass) throws SQLException {
+
+        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, name);
+        ps.setString(2, uname);
+        ps.setString(3, pass);
+
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
+
 }
-
-    
-
