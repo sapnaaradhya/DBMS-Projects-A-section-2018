@@ -9,7 +9,7 @@
  * @author Suma
  */
 
-import com.mysql.jdbc.Connection;
+
 import java.awt.Toolkit;
 import java.sql.*;
 
