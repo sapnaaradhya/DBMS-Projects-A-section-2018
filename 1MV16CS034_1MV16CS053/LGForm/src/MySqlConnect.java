@@ -40,6 +40,21 @@ public class MySqlConnect {
         return rs.next();
 
     }
+    public ResultSet displayStudents()
+    {
+             ResultSet rs=null;
+        try{
+        String Sql = "Select usn,name from student";
+         PreparedStatement pat = con.prepareStatement(Sql);
+         rs=pat.executeQuery();
+         
+        }
+        catch(Exception e)
+        {
+            
+        }
+        return rs;
+    }
 
     /**
      *
@@ -83,6 +98,7 @@ public class MySqlConnect {
 "                DOB DATE NOT NULL,\n" +
 "                EMAIL VARCHAR(25) NOT NULL,\n" +
 "                PHONE_NO INT(10) NOT NULL,\n" +
+                 "LOCAL_GUARDIAN_NAME VARCHAR(10) NOT NULL, \n"+
 "                ADDRESS VARCHAR(99) NOT NULL,\n" +
 "                STAY_TYPE VARCHAR(15) NOT NULL,\n" +
 "                BLOOD_GROUP VARCHAR(15) NOT NULL,\n" +
@@ -211,8 +227,8 @@ public class MySqlConnect {
         return n;
     }
 
-    public int insertIntoStudent(String student_name, String usn, String branch_name, String dob, String email, int phone_no, String address, String stay_type, String blood_group, String hobbies, String admission_category, String father_name, int father_no, String mother_name, int mother_no) throws SQLException {
-        String query = "insert into Student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    public int insertIntoStudent(String student_name, String usn, String branch_name, String dob, String email, int phone_no, String local_guardian_name, String address, String stay_type, String blood_group, String hobbies, String admission_category, String father_name, int father_no, String mother_name, int mother_no) throws SQLException {
+        String query = "insert into Student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement st = con.prepareStatement(query);
 
         st.setString(1, student_name);
@@ -221,6 +237,7 @@ public class MySqlConnect {
         st.setString(4, dob);
         st.setString(5, email);
         st.setInt(6, phone_no);
+        st.setString(7, local_guardian_name );
         st.setString(7, address);
         st.setString(8, stay_type);
         st.setString(9, blood_group);
