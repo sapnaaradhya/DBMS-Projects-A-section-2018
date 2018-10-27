@@ -11,7 +11,7 @@ public class SRS {
         SqlDao obj = new SqlDao();
 
 }
-
+}
 class SqlDao {
 
     Connection con = null;
@@ -176,6 +176,104 @@ class SqlDao {
         con.close();
         return n;
     }
+     public int insertStudent(String usn, String s_name, String gender,String dob,String address,String s_phone,String parent_name,String p_phone,
+             String guardian_name,String g_phone,String branch_id,String course_id,String aadhar_no,String stay_type,String age,String year_of_join,String present_sem,
+             String category_of_exam,String cet_comedk_other_rank,String puc,String tenth) throws SQLException {
+
+        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, usn);
+        ps.setString(2, s_name);
+        ps.setString(3, gender);
+        ps.setString(4, dob);
+        ps.setString(5, address);
+        ps.setString(6, s_phone);
+        ps.setString(7, parent_name);
+        ps.setString(8, p_phone);
+        ps.setString(9, guardian_name);
+        ps.setString(10, g_phone);
+        ps.setString(11, branch_id);
+        ps.setString(12, course_id);
+        ps.setString(13, aadhar_no);
+        ps.setString(14, stay_type);
+        ps.setString(15, age);
+        ps.setString(16, year_of_join);
+        ps.setString(17, present_sem);
+        ps.setString(18, category_of_exam);
+        ps.setString(19, cet_comedk_other_rank);
+        ps.setString(20, puc);
+        ps.setString(21, tenth);
+
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
+      public int insertFees(String receipt, String usn, String total_amtpaid,String paid_by,String due_amt) throws SQLException {
+
+        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, receipt);
+        ps.setString(2, usn);
+        ps.setString(3, total_amtpaid);
+        ps.setString(4, paid_by);
+        ps.setString(5, due_amt);
+
+
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
+       public int insertAdmin(String faculty_id, String faculty_name, String course_id,String branch_id,String faculty_salary,String qualification,String phone_no,
+               String address) throws SQLException {
+
+        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, faculty_id);
+        ps.setString(2, faculty_name);
+        ps.setString(3, course_id);
+        ps.setString(4, branch_id);
+        ps.setString(5, faculty_salary);
+        ps.setString(6, qualification);
+        ps.setString(7, phone_no);
+        ps.setString(8, address);
+
+        
+
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
+        public int insertExams(String branch_id, String usn, String sgpa1, String sgpa2, String sgpa3, String sgpa4, String sgpa5, String sgpa6,
+                 String sgpa7, String sgpa8, String cgpa) throws SQLException {
+
+        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, branch_id);
+        ps.setString(2, usn);
+        ps.setString(3, sgpa1);
+        ps.setString(4, sgpa2);
+        ps.setString(5, sgpa3);
+        ps.setString(6, sgpa4);
+        ps.setString(7, sgpa5);
+        ps.setString(8, sgpa6);
+        ps.setString(9, sgpa7);
+        ps.setString(10, sgpa8);
+        ps.setString(11, cgpa);
+        
+
+
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
 
 }
-}
+
