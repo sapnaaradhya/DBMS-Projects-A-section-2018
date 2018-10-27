@@ -203,3 +203,13 @@ class SqlDao {
 }
 
 
+<<<<<<< HEAD
+=======
+        int n = ps.executeUpdate();
+        con.close();
+        return n;
+    }
+
+}
+}
+>>>>>>> 495fbfb1a567a18340d205a6ed17cc55fd956afc
