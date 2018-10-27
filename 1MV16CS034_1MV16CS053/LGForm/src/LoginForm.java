@@ -9,9 +9,13 @@
  * @author Suma
  */
 
-import com.mysql.jdbc.Connection;
+
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.awt.Toolkit;
 import java.sql.*;
+import java.util.logging.Level;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 public class LoginForm extends javax.swing.JFrame {
         Connection con=null;
@@ -108,24 +112,30 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
             
-           /* try {
+           try {
                 MySqlConnect obj = new MySqlConnect();
                 obj.createTableStudent();
                 boolean b=obj.verify(txtusername.getText(), txtpassword.getText());
                 
-                if(b){ */
+                if(b){ 
                     welcome w=new welcome();
+                    ResultSet rs=obj.displayStudents();
+                    if(rs.next())
+                    {
+                      //table.setModel(DbUtils.resultSetToTableModel(rs));
+                    }
+                    w.name.setText(txtusername.getText());
                     w.setVisible(true);
                     this.dispose();
-                /*}else{
+                }else{
                     JOptionPane.showMessageDialog(null,"Invalid User");
                     
                 }
                 
             } catch (SQLException ex) {
-                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+//                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
             }
-        */
+        
         
         
     }//GEN-LAST:event_btnsubmitActionPerformed
