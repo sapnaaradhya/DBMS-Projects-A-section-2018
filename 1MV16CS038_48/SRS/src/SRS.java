@@ -10,8 +10,19 @@ public class SRS {
 
         SqlDao obj = new SqlDao();
 
+        obj.createTableAdmin();
+        obj.createTableCourse();
+        obj.createTableBranch();
+        obj.createTableStudent();
+        obj.createTableFaculty();
+        obj.createTableFees();
+        obj.createTableExams();
+    }       
+        
+
+
 }
-}
+
 class SqlDao {
 
     Connection con = null;
@@ -20,6 +31,7 @@ class SqlDao {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/srs","root","dolly");
 
         } catch (Exception ex) {
             System.out.println(ex);
@@ -40,6 +52,28 @@ class SqlDao {
         
         return true;
     }
+
+
+    
+   public int insertAdmin(String name,String uname ,String pass) throws SQLException{
+       
+       
+       String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+       
+       PreparedStatement ps = con.prepareStatement(sql);
+       
+       ps.setString(1, name);
+       ps.setString(2, uname);
+       ps.setString(3, pass);
+       
+       int n=ps.executeUpdate();
+       
+       return n;
+   } 
+    
+    
+   
+    
 
 
     public boolean createTableCourse() throws SQLException {
@@ -161,16 +195,13 @@ class SqlDao {
         //con.close();
         return true;
     }
+    
 
-    public int insertAdmin(String name, String uname, String pass) throws SQLException {
 
-        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
+   
+}
 
-        PreparedStatement ps = con.prepareStatement(sql);
 
-        ps.setString(1, name);
-        ps.setString(2, uname);
-        ps.setString(3, pass);
 
         int n = ps.executeUpdate();
         con.close();

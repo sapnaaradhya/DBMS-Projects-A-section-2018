@@ -241,10 +241,14 @@ public class Tpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
+        // TODO add your handling code here:
+=======
    
         new f1page().setVisible(true);
         this.dispose();
         
+>>>>>>> 495fbfb1a567a18340d205a6ed17cc55fd956afc
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
