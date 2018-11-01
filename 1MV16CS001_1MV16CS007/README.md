@@ -13,6 +13,14 @@ sudo pip3 install requirements.txt
 ```
 
 ---
+## Project structure
+- [app](app): This is the application package, and houses different but interlinked modules of the application.
+- [templates](app/templates): All templates are stored in this directory.
+- [models.py](app/models.py): All models are in this file.
+- [views.py](app/views.py): All routes are in this file.
+- <run.py>: 
+
+---
 ## Software information
 **Operating System:** Ubuntu 18.04.1 LTS  
 **OS type:** 64-bit  
