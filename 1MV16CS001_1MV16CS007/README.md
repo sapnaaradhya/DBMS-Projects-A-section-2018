@@ -17,6 +17,7 @@ DBMS project for automatically creating schedule for college teachers.
 **Software Development Kit:** cx_Oracle 7.0.0  
 **Scripting Language:** JavaScript  
 **Database driver:** Oracle Database Express Edition 11g Release 2  
+**Front-end libraries:** Bootstrap v4.1.3, Popper v1, jQuery v3.3.1
 
 ---
 ## Hardware information
