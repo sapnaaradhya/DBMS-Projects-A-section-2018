@@ -25,5 +25,4 @@ DBMS project for automatically creating schedule for college teachers.
 **RAM:** 7.7 GiB  
 **Graphics:** Intel® HD Graphics 520 (Skylake GT2)  
 **Hard Disk:** 211.5 GB  
-**Monitor:** 15'' Colour Monitor
-**Keyboard:** 122 Keys
+**Monitor:** 15'' Colour Monitor  
