@@ -2,9 +2,15 @@
 DBMS Mini project for 5th Semester under VTU based on A Heuristic approach to Automated College Schedule Generation using Genetic Algorithms.
 
 ---
-# Developers
+## Developers
 - [Abhijeet Singh](https://github.com/cseas) (1MV16CS001)
 - [Aditya Narayan](https://github.com/NarayanAdi08) (1MV16CS007)
+
+---
+## Install Requirements
+```sh
+sudo pip3 install requirements.txt
+```
 
 ---
 ## Software information
