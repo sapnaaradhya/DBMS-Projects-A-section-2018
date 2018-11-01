@@ -15,8 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles -->
     <link href="/static/css/jumbotron.css" rel="stylesheet">
+    <link href="/static/css/sticky-footer.css" rel="stylesheet">
   </head>
 
   <body>
@@ -51,8 +52,10 @@
     </nav>
     {% block body %}
     {% endblock %}
-    <footer class="container">
-        <p>&copy; Abhijeet Singh & Aditya Narayan</p>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">&copy; Abhijeet Singh & Aditya Narayan</span>
+      </div>
     </footer>
   
     <!-- Bootstrap core JavaScript
