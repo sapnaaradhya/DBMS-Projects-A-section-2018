@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="/static/img/favicon.png">
 
-    <title>Floating labels example for Bootstrap</title>
+    <title>Student Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/floating-labels.css" rel="stylesheet">
+    <link href="/static/css/floating-labels.css" rel="stylesheet">
   </head>
 
   <body>
     <form class="form-signin">
       <div class="text-center mb-4">
-        <img class="mb-4" src="img/login.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
-        <p>Please enter your login details below for an <code>admin</code> account. Click <a href="index.html">here</a> to go back if you're not an admin.</p>
+        <img class="mb-4" src="/static/img/login.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Student Login</h1>
+        <p>Please enter your login details below for a <code>student</code> account. Click <a href="{{ url_for('index') }}">here</a> to go back if you're not a student.</p>
         <a href="mailto:help@sirmvit.edu">Forgot password?</a>
       </div>
 
