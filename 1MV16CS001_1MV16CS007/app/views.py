@@ -1,6 +1,9 @@
-from flask import Flask, render_template
+# Created by Abhijeet Singh
+# views.py
 
-app = Flask(__name__)
+from flask import render_template
+
+from app import app
 
 @app.route('/')
 def index():
@@ -17,6 +20,3 @@ def signin_staff():
 @app.route('/signin_admin')
 def signin_admin():
     return render_template('signin_admin.html')
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
