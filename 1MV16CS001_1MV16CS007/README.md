@@ -1,5 +1,5 @@
 # Project Description
-DBMS project for automatically creating schedule for college teachers.
+DBMS Mini project for 5th Semester under VTU based on A Heuristic approach to Automated College Schedule Generation using Genetic Algorithms.
 
 ---
 # Developers
