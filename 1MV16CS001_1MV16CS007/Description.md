@@ -7,7 +7,7 @@ DBMS project for automatically creating schedule for college teachers.
 - Aditya Narayan (1MV16CS007)
 
 ---
-## Software specification
+## Software information
 **Operating System:** Ubuntu 18.04.1 LTS  
 **OS type:** 64-bit  
 **Programming Language:** Python 3.6.6  
@@ -19,7 +19,7 @@ DBMS project for automatically creating schedule for college teachers.
 **Database driver:** Oracle Database Express Edition 11g Release 2  
 
 ---
-## Hardware specification
+## Hardware information
 **Processor:** Intel® Core™ i5-6200U CPU @ 2.30GHz × 4  
 **RAM:** 7.7 GiB  
 **Graphics:** Intel® HD Graphics 520 (Skylake GT2)  
