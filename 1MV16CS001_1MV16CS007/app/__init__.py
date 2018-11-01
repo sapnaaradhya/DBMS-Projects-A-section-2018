@@ -16,3 +16,9 @@ from app import views
 
 # Load the config file
 app.config.from_object('config')
+
+# ensure the instance folder exists
+try:
+    os.makedirs(app.instance_path)
+except OSError:
+    pass
