@@ -2,9 +2,9 @@
 DBMS project for automatically creating schedule for college teachers.
 
 ---
-# Members
-- Abhijeet Singh (1MV16CS001)
-- Aditya Narayan (1MV16CS007)
+# Developers
+- [Abhijeet Singh](https://github.com/cseas) (1MV16CS001)
+- [Aditya Narayan](https://github.com/NarayanAdi08) (1MV16CS007)
 
 ---
 ## Software information
