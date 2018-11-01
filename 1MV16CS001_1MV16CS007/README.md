@@ -18,7 +18,9 @@ sudo pip3 install requirements.txt
 - [templates](app/templates): All templates are stored in this directory.
 - [models.py](app/models.py): All models are in this file.
 - [views.py](app/views.py): All routes are in this file.
-- run.py: 
+- [run.py](run.py): This is the application's entry point.
+- [config.py](app/config.py): This file contains the application configurations.
+- [requirements.txt](requirements.txt): Contains the software dependencies for the application.
 
 ---
 ## Software information
