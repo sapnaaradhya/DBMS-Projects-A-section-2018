@@ -20,3 +20,7 @@ def signin_staff():
 @app.route('/signin_admin')
 def signin_admin():
     return render_template('signin_admin.html')
+
+@app.route('/student_home')
+def student_home():
+    return render_template('student_home.html')

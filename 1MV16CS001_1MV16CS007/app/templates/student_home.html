@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="img/favicon.png">
-  
-  <title>Automatic Timetable</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <!-- Bootstrap dropdown menu requires jquery and popper -->
-  <script src="js/bootstrap.js"></script>
-</head>
-<body class="container">
+<!-- Created by Abhijeet Singh -->
+<!-- student_home.html -->
+{% extends "base.html" %}
+{% block title %}Student Home{% endblock %}
+{% block body %}
+<div class="container">
   <table class="table table-bordered table-hover">
     <caption>5A</caption>
     <thead>
@@ -81,8 +70,8 @@
   
   <!-- Example split danger button -->
   <div class="btn-group">
-    <button type="button" class="btn btn-danger">Action</button>
-    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn">Action</button>
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="sr-only">Toggle Dropdown</span>
     </button>
     <div class="dropdown-menu">
@@ -93,28 +82,5 @@
       <a class="dropdown-item" href="#">Separated link</a>
     </div>
   </div>
-
-  <!-- form -->
-    <form class="px-4 py-3">
-    <div class="form-group">
-      <label for="exampleDropdownFormEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="dropdownCheck">
-      <label class="form-check-label" for="dropdownCheck">
-        Remember me
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
-  <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="#">New around here? Sign up</a>
-  <a class="dropdown-item" href="#">Forgot password?</a>
-
-</body>
-</html>
+</div>
+{% endblock %}
