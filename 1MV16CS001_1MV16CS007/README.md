@@ -33,7 +33,9 @@ sudo pip3 install requirements.txt
 **Software Development Kit:** CPython Interpreter, GCC 8.0.1  
 **Scripting Language:** JavaScript  
 **Database driver:** cx_Oracle 7.0.0  
-**Front-end libraries:** Bootstrap v4.1.3, Popper v1, jQuery v3.3.1
+**Front-end libraries:** Bootstrap v4.1.3, Popper v1, jQuery v3.3.1  
+**Database Editor:** Oracle SQL Developer Version 18.2.0.183  
+**Code Editor:** Visual Studio Code 1.28.2  
 
 ---
 ## Hardware information
