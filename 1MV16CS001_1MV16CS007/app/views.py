@@ -24,3 +24,7 @@ def signin_admin():
 @app.route('/student_home')
 def student_home():
     return render_template('student_home.html')
+
+@app.route('/admin_home')
+def admin_home():
+    return render_template('admin_home.html')
