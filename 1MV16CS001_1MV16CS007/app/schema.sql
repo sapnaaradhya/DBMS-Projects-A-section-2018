@@ -153,7 +153,7 @@ END;
 
 create table student (
 	stud_id varchar(10),
-	name varchar(10),
+	stud_name varchar(10),
 	dept_name varchar(10),
 	primary key(stud_id),
 	foreign key(dept_name) references dept(dept_name)
