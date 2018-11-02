@@ -37,6 +37,7 @@ sudo pip3 install requirements.txt
 **Front-end libraries:** Bootstrap v4.1.3, Popper v1, jQuery v3.3.1  
 **Database Editor:** Oracle SQL Developer Version 18.2.0.183  
 **Code Editor:** Visual Studio Code 1.28.2  
+**Server dependencies:** Jinja 2.10, Werkzeug 0.14  
 
 ---
 ## Hardware information
