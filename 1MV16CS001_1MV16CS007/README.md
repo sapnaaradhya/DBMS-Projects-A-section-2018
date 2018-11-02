@@ -21,6 +21,7 @@ sudo pip3 install requirements.txt
 - [run.py](run.py): This is the application's entry point.
 - [config.py](app/config.py): This file contains the application configurations.
 - [requirements.txt](requirements.txt): Contains the software dependencies for the application.
+- [schema.sql](app/schema.sql): Contains the schema of the database.
 
 ---
 ## Software information

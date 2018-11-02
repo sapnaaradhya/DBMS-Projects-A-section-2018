@@ -36,8 +36,9 @@ def runSqlQuery(sqlCommand, connectString):
     session.stdin.write(sqlCommand)
     return session.communicate()
 connstr = 'student/student@//localhost:1521/xe'
-output, error = runSqlQuery("@schema.sql".encode('utf-8'), connstr)
-print(output)
+
+# output, error = runSqlQuery("@schema.sql".encode('utf-8'), connstr)
+# print(output)
 # print(error)
 
 con.close()
