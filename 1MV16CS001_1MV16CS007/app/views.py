@@ -40,3 +40,7 @@ def admin_create2():
 @app.route('/index_all')
 def index_all():
     return render_template('index_all.html')
+
+@app.route('/staff_home')
+def staff_home():
+    return render_template('staff_home.html')
