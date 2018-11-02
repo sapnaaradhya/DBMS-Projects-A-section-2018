@@ -2,7 +2,6 @@ import cx_Oracle
 
 con = cx_Oracle.connect('student/student@//localhost:1521/xe')
 # print(con.version)
-
 cur = con.cursor()
 
 # method to receive each row as a named tuple
@@ -19,15 +18,26 @@ def makeDictFactory(cursor):
         return dict(zip(columnNames, args))
     return createRow
 
-result = cur.execute("select * from student")
+# result = cur.execute("select * from student")
 
-# use the following statement to receive each row as a named tuple
+# use the following statement after execute to receive each row as a named tuple
 # cur.rowfactory = makeNamedTupleFactory(cur)
 
-# use the following statement to receive each row as a dictionary
+# use the following statement after execute to receive each row as a dictionary
 # cur.rowfactory = makeDictFactory(cur)
 
-for i in result:
-    print(i)
+# for i in result:
+#     print(i)
+
+from subprocess import Popen, PIPE
+#function that takes the sqlCommand and connectString and retuns the output and #error string (if any)
+def runSqlQuery(sqlCommand, connectString):
+    session = Popen(['sqlplus', '-S', connectString], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    session.stdin.write(sqlCommand)
+    return session.communicate()
+connstr = 'student/student@//localhost:1521/xe'
+output, error = runSqlQuery("@schema.sql".encode('utf-8'), connstr)
+print(output)
+# print(error)
 
 con.close()
