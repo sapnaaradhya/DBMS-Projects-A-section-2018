@@ -28,3 +28,11 @@ def student_home():
 @app.route('/admin_home')
 def admin_home():
     return render_template('admin_home.html')
+
+@app.route('/admin_create1')
+def admin_create1():
+    return render_template('admin_create1.html')
+
+@app.route('/admin_create2')
+def admin_create2():
+    return render_template('admin_create2.html')
