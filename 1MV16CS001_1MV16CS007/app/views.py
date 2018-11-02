@@ -2,6 +2,7 @@
 # views.py
 
 from flask import render_template
+from flask import request
 
 from app import app
 
@@ -44,3 +45,12 @@ def index_all():
 @app.route('/staff_home')
 def staff_home():
     return render_template('staff_home.html')
+
+@app.route('/search', methods=['POST'])
+def search():
+    search_name = request.form['searchQuery']
+
+    if search_name == "hello":
+        return render_template('search_error.html', name=search_name)
+    else:
+        return render_template('search.html', name=search_name)
