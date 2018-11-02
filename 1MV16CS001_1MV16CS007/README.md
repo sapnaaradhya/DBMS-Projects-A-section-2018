@@ -27,7 +27,7 @@ sudo pip3 install requirements.txt
 **Operating System:** Ubuntu 18.04.1 LTS  
 **OS type:** 64-bit  
 **Programming Language:** Python 3.6.6  
-**Database:** Oracle Database Express Edition 11g Release 2  
+**Database:** Oracle Database Express Edition 11g Release 2 - 64bit Production  
 **Browser:** Firefox Quantum 63.0 (64-bit)  
 **Web Server:** Flask 1.0.2/Microsoft Azure  
 **Software Development Kit:** CPython Interpreter, GCC 8.0.1  
