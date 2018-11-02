@@ -36,3 +36,7 @@ def admin_create1():
 @app.route('/admin_create2')
 def admin_create2():
     return render_template('admin_create2.html')
+
+@app.route('/index_all')
+def index_all():
+    return render_template('index_all.html')
