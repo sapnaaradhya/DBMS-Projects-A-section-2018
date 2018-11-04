@@ -1,0 +1,96 @@
+<html lang="en">
+
+   <%- include header %>
+
+
+
+<div class="container col-sm-12" id="mainform">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Customer name</th>
+        <th>Product Quantity</th>
+        <th>Month</th>
+        <th>transportation cost</th>
+        <th>Bill amount</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0; i < result.length; i++) { %>
+       <tr>
+         <td><%= result[i].customer_name %></td>
+         <td><%= result[i].product_quantity %></td>
+         <td><%= result[i].month %></td>
+         <td><%= result[i].transportation_cost %></td>
+         <td><%= result[i].bill_amount %></td>
+         <td><a id= "<%= result[i].customer_id %>" href="/home/delete_customer?id= <%= result[i].customer_id %>" >Delete</a></td>
+
+
+       </tr>
+    <% } %>
+  </tbody>
+</table>
+
+        <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Add Customers</div>
+                    </div>
+                    <div class="panel-body" >
+                        <form class="form-horizontal" role="form" method="post" action="/home/customers" onSubmit="return checkblank(this);">
+
+                            <div class="form-group">
+                                <label for="first_name" class="col-md-3 control-label">Customer name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="customer_name" placeholder="Name of the customer">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-3 control-label">Product Quantity</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" name="product_quantity" placeholder="Quantity of the product">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-3 control-label">Month</label>
+                                <div class="col-md-9">
+                                    <input type="date" class="form-control" name="month" placeholder="Month">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-3 control-label">Transportation cost</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" name="transportation_cost" placeholder="Transportation cost">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-3 control-label">Bill Amount</label>
+                                <div class="col-md-9">
+                                    <input type="number" class="form-control" name="bill_amount" placeholder="Bill amount">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Add</button>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </form>
+                     </div>
+                </div>
+
+
+     </div>
+</div>
+
+    <%- include footer %>

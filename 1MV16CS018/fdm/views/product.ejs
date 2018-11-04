@@ -1,0 +1,68 @@
+<html lang="en">
+
+   <%- include header %>
+
+
+
+<div class="container col-sm-12" id="mainform">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Product name</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0; i < result.length; i++) { %>
+       <tr>
+         <td><%= result[i].product_name %></td>
+         <td><%= result[i].cost %></td>
+         <td><a id= "<%= result[i].product_id %>" href="/home/delete_product?id= <%= result[i].product_id %>" >Delete</a></td>
+       </tr>
+    <% } %>
+  </tbody>
+</table>
+
+
+        <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Add Product</div>
+                    </div>
+                    <div class="panel-body" >
+                        <form class="form-horizontal" role="form" method="post" action="/home/product" onSubmit="return checkblank(this);">
+
+                            <div class="form-group">
+                                <label for="first_name" class="col-md-3 control-label">Product name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="product_name" placeholder="Name of the product">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="col-md-3 control-label">Product Cost</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="cost" placeholder="Cost of the product">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <!-- Button -->
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Add</button>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </form>
+                     </div>
+                </div>
+
+
+     </div>
+</div>
+
+    <%- include footer %>
