@@ -1,0 +1,9 @@
+TITLE:BLOOD DONATION SYSTEM DATABASE PROJECT
+TEAM MEMBER:MANOJ P
+
+DESCRIPTION:
+		 A system in which data of Patient, data of donor, data of blood bank would be saved and will be interrelation with each other
+
+DATA OF PATIENT – Patient Name, Patient Id, Patient Blood Group, Patent Disease
+DATA OF DONAR – Donar Name, Donar Id, Donar Bood Group, Donar Medical report, Donar Address, Donar Contact number
+DATA OF BLOOD BANK – Blood Bank Name, Blood Bank Address, Blood bank Donors name, Blood Bank Contact Number, Blood Bank Address
