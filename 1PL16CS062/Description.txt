@@ -1,0 +1,11 @@
+---------------------------------
+STUDENT INFORMATION SYSTEM
+---------------------------------
+
+This project is a Student Information Management System which is authenticated by an administrator.
+A user can see the details of a student from the landing page of the system.
+
+The administrator can perform following operations:
+1. Add information of a student in the database.
+2. Update the information of a student in the database.
+3. Delete a student information from the database.

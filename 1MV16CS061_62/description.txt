@@ -1,0 +1,10 @@
+TOPIC:- WILDLIFE SANCTUARY MANAGEMENT SYSTEM
+
+PROJECT MEMBERS:-1)NIRMALA VADDODAGI(1MV16CS061)
+		2)NIRUPAMA THOUDAM(1MV16CS062)
+DESCRIPTION:
+The scope of the project is clear to give a simple and attractive application to simplify the work as well as to reduce the efforts while doing it offline
+ or we can say by doing it with old methods.
+In this application we are able to save the database of all the staff, animals need and tourist data.
+The staff data includes the staff profession and their salary details, the animal data includes the type of animal (either herbivore or carnivore)
+ and their feed cost, tourist data includes the ticket details and the donations they make.
