@@ -28,8 +28,12 @@ class StaffInformation {
     public static void main(String[] args) throws SQLException, Exception {
 
         SQLDAO obj = new SQLDAO();
-
-        System.out.println(obj.getTeacherName("101", "P1", "MONDAY"));
+        
+         Calendar calendar = Calendar.getInstance();
+         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        System.out.println(dayOfWeek);
+        
+       // System.out.println(obj.getTeacherName("101", "P1", "MONDAY"));
 
     }
 
@@ -227,7 +231,8 @@ public class SQLDAO {
 
         Random rand = new Random();
 
-        int week = Calendar.DAY_OF_WEEK;//
+        Calendar calendar = Calendar.getInstance();
+         int week = calendar.get(Calendar.DAY_OF_WEEK);
         String day = null;
 
         int hr = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);//Math.abs(rand.nextInt(16 - 8) + 9);//
@@ -260,25 +265,25 @@ public class SQLDAO {
 
         switch (week) {
 
-            case 1:
+            case 2:
                 day = "MONDAY";
                 break;
-            case 2:
+            case 3:
                 day = "TUESDAY";
                 break;
-            case 3:
+            case 4:
                 day = "WEDNESDAY";
                 break;
-            case 4:
+            case 5:
                 day = "THURSDAY";
                 break;
-            case 5:
+            case 6:
                 day = "FRIDAY";
                 break;
-            case 6:
+            case 7:
                 day = "SATURDAY";
                 break;
-            case 7:
+            case 1:
                 day = "SUNDAY";
                 break;
 
