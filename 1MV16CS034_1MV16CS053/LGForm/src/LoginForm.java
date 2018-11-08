@@ -8,9 +8,7 @@
  *
  * @author Suma
  */
-
-
-import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+//import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
 import java.awt.Toolkit;
 import java.sql.*;
 import java.util.logging.Level;
@@ -18,10 +16,11 @@ import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
 public class LoginForm extends javax.swing.JFrame {
-        Connection con=null;
-        PreparedStatement pat=null;
-        ResultSet rs=null;
-        
+
+    Connection con = null;
+    PreparedStatement pat = null;
+    ResultSet rs = null;
+
     /**
      * Creates new form LoginForm
      */
@@ -43,13 +42,13 @@ public class LoginForm extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtusername = new javax.swing.JTextField();
+        user = new javax.swing.JTextField();
         btnsubmit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         addUser = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtpassword = new javax.swing.JPasswordField();
+        pass = new javax.swing.JPasswordField();
 
         jButton1.setText("jButton1");
 
@@ -64,13 +63,13 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2.setText("Password  :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 354, -1, -1));
 
-        txtusername.setToolTipText("Username");
-        txtusername.addActionListener(new java.awt.event.ActionListener() {
+        user.setToolTipText("Username");
+        user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusernameActionPerformed(evt);
+                userActionPerformed(evt);
             }
         });
-        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 269, 271, -1));
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 271, -1));
 
         btnsubmit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnsubmit.setText("LOGIN");
@@ -101,54 +100,63 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SMVITLogo.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 168, -1, 199));
-        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 351, 271, -1));
+        getContentPane().add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 280, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtusernameActionPerformed
+    }//GEN-LAST:event_userActionPerformed
 
     private void btnsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitActionPerformed
-            
-           try {
-                MySqlConnect obj = new MySqlConnect();
-                obj.createTableStudent();
-                boolean b=obj.verify(txtusername.getText(), txtpassword.getText());
-                
-                if(b){ 
-                    welcome w=new welcome();
-                    ResultSet rs=obj.displayStudents();
-                    if(rs.next())
-                    {
-                      //table.setModel(DbUtils.resultSetToTableModel(rs));
-                    }
-                    w.name.setText(txtusername.getText());
-                    w.setVisible(true);
-                    this.dispose();
-                }else{
-                    JOptionPane.showMessageDialog(null,"Invalid User");
-                    
-                }
-                
-            } catch (SQLException ex) {
-//                Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+
+        // TODO add your handling code here:
+        String query = "SELECT NAME,USERNAME,PASSWORD FROM LOGIN WHERE USERNAME=? AND PASSWORD=?;";
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "1234");
+            PreparedStatement pst = con.prepareStatement(query);
+
+            pst.setString(1, user.getText());
+            pst.setString(2, pass.getText());
+
+            ResultSet pp = pst.executeQuery();
+
+            if (pp.next()) {
+
+                welcome sg = new welcome(pp.getString(1));
+                sg.setVisible(true);
+                this.dispose();
+                ResultSet rs1 = null;
+                String Sql = "Select s.usn,s.student_name from student s, login f where f.name=s.local_guardian_name and f.username='" + user.getText() + "'";
+                PreparedStatement pat = con.prepareStatement(Sql);
+
+                rs = pat.executeQuery();
+
+                sg.JTableUsnName.setModel(DbUtils.resultSetToTableModel(rs));
+
+            } else {
+                user.setText(null);
+                pass.setText(null);
+                JOptionPane.showMessageDialog(null, "invalid username or password");
             }
-        
-        
-        
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
+
     }//GEN-LAST:event_btnsubmitActionPerformed
 
     private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
         // TODO add your handling code here:
-        AddUser add=new AddUser();
+        AddUser add = new AddUser();
         add.setVisible(true);
+
         this.dispose();
     }//GEN-LAST:event_addUserActionPerformed
-      
-    
-       
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -179,7 +187,7 @@ public class LoginForm extends javax.swing.JFrame {
             public void run() {
                 new LoginForm().setVisible(true);
             }
-        }); 
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -191,7 +199,7 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField txtpassword;
-    private javax.swing.JTextField txtusername;
+    private javax.swing.JPasswordField pass;
+    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }
