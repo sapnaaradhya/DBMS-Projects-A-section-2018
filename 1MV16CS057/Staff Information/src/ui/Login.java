@@ -426,7 +426,7 @@ public class Login extends javax.swing.JFrame {
                     if (rs.next()) {
                           String str = rs.getString(2);
                         //JOptionPane.showMessageDialog(null, "Success");
-                        new Search(str).setVisible(true);
+                        new AdminUpdate(str).setVisible(true);
                         dispose();
 
                     } else {

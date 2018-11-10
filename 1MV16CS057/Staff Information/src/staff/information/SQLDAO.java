@@ -28,13 +28,14 @@ class StaffInformation {
     public static void main(String[] args) throws SQLException, Exception {
 
         SQLDAO obj = new SQLDAO();
-        
-         Calendar calendar = Calendar.getInstance();
-         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-        System.out.println(dayOfWeek);
-        
-       // System.out.println(obj.getTeacherName("101", "P1", "MONDAY"));
 
+        Calendar calendar = Calendar.getInstance();
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        System.out.println(dayOfWeek);
+
+        System.out.println(obj.getSelectedRowFrom("admin", "1001"));
+
+        // System.out.println(obj.getTeacherName("101", "P1", "MONDAY"));
     }
 
     public static void updateTheFields() throws SQLException {
@@ -60,7 +61,7 @@ class StaffInformation {
 //Data-Access-Object Class
 public class SQLDAO {
 
-    Connection con = null;
+    public Connection con = null;
 
     public SQLDAO() {
 
@@ -71,6 +72,16 @@ public class SQLDAO {
         } catch (Exception ex) {
             System.out.println(ex);
         }
+
+    }
+
+    public ResultSet getTables() throws SQLException {
+
+        String sql = "SHOW TABLES;";
+
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        return pst.executeQuery();
 
     }
 
@@ -232,7 +243,7 @@ public class SQLDAO {
         Random rand = new Random();
 
         Calendar calendar = Calendar.getInstance();
-         int week = calendar.get(Calendar.DAY_OF_WEEK);
+        int week = calendar.get(Calendar.DAY_OF_WEEK);
         String day = null;
 
         int hr = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);//Math.abs(rand.nextInt(16 - 8) + 9);//
@@ -296,6 +307,8 @@ public class SQLDAO {
         } else if (P.equals("LUNCH BREAK")) {
             return "It's " + P;
         } else if (P.equals("SHORT BREAK")) {
+            return "It's " + P;
+        }else if (P.equals("NOT college Hours")){
             return "It's " + P;
         }
 
@@ -838,6 +851,200 @@ public class SQLDAO {
         pst.setString(1, "%" + name + "%");
 
         return pst.executeQuery();
+
+    }
+
+    public ResultSet getTable(String tableName) throws SQLException {
+
+        String sql = "SELECT * FROM " + tableName;
+
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        return pst.executeQuery();
+
+    }
+
+    public ResultSet getSelectedRowFrom(String tableName, String key) throws SQLException {
+
+        String sql1 = "DESC " + tableName;
+
+        PreparedStatement pst1 = con.prepareStatement(sql1);
+        // int n = pst1.executeUpdate();
+        //System.out.println("Number of rows "+n);
+
+        String columnIndex = null;
+
+        ResultSet rs = pst1.executeQuery();
+        if (rs.next()) {
+            columnIndex = rs.getString(1);
+
+        }
+
+        String sql = "SELECT * FROM " + tableName + " WHERE " + columnIndex + " = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, key);
+
+        ResultSet rs2 = pst.executeQuery();
+
+        return rs2;
+    }
+
+    public int deleteFromTable(String tableName, String key) throws SQLException {
+
+        String sql1 = "DESC " + tableName;
+
+        PreparedStatement pst1 = con.prepareStatement(sql1);
+
+        String columnIndex = null;
+
+        ResultSet rs = pst1.executeQuery();
+        if (rs.next()) {
+            columnIndex = rs.getString(1);
+        }
+
+        String sql = "DELETE FROM " + tableName + " WHERE " + columnIndex + " = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1, key);
+
+        return pst.executeUpdate();
+
+    }
+
+    public int getCountOf(String tableName) throws SQLException {
+
+        String sql1 = "DESC " + tableName;
+
+        PreparedStatement pst1 = con.prepareStatement(sql1);
+        return pst1.executeUpdate();
+
+    }
+
+    public ResultSet getTheDescriptionOf(String tableName) throws SQLException {
+
+        String sql = "DESC " + tableName;
+
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        return pst.executeQuery();
+
+    }
+
+    public int updateTheTable(String tableName, String primaryKey, String key, String text1, String text2, String text3, String text4) throws SQLException {
+
+        if (tableName.equalsIgnoreCase("section")) {
+
+            //| SEC_ID | SEC_NAME | YEAR | ROOM_NO | SEMESTER |
+            String sql = "UPDATE " + tableName + " SET SEC_NAME = ? , YEAR = ? , ROOM_NO = ? , SEMESTER = ? WHERE " + primaryKey + " = ? ";
+            PreparedStatement pst = con.prepareStatement(sql);
+
+            pst.setString(1, text1);
+            pst.setInt(2, Integer.parseInt(text2));
+            pst.setString(3, text3);
+            pst.setInt(4, Integer.parseInt(text4));
+            pst.setString(5, key);
+
+            return pst.executeUpdate();
+
+        } else if (tableName.equalsIgnoreCase("subject")) {
+
+            //| SUB_ID | SUB_CODE  | SEC_ID | SUB_NAME  | STAFF_ID |
+            String sql = "UPDATE " + tableName + " SET SUB_CODE = ? , SEC_ID = ? , SUB_NAME = ? , STAFF_ID = ? WHERE " + primaryKey + " = ? ";
+            PreparedStatement pst = con.prepareStatement(sql);
+
+            pst.setString(1, text1);
+            pst.setString(2, text2);
+            pst.setString(3, text3);
+            pst.setInt(4, Integer.parseInt(text4));
+            pst.setString(5, key);
+
+            return pst.executeUpdate();
+
+        }
+
+        return 0;
+    }
+
+    public int updateTheTable(String tableName, String primaryKey, String key, String text1, String text2, String text3, String text4, String text5, String text6, String text7) throws SQLException {
+
+        // if(tableName.equalsIgnoreCase("admin")){
+        //| ADMIN_ID | NAME   | DESIGNATION | DOB| PHONE| EMAIL_ID | USERNAME   | PASSWORD    |
+        String sql = "UPDATE " + tableName + " SET NAME = ? , DESIGNATION = ? , DOB = ? , PHONE = ? , EMAIL_ID = ? , USERNAME = ? , PASSWORD = ? WHERE " + primaryKey + " = ? ";
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        pst.setString(1, text1);
+        pst.setString(2, text2);
+        pst.setString(3, text3);
+        pst.setLong(4, new Long(text4));
+        pst.setString(5, text5);
+        pst.setString(6, text6);
+        pst.setString(7, text7);
+        pst.setString(8, key);
+
+        return pst.executeUpdate();
+
+//        }else if(tableName.equalsIgnoreCase("teacher")){
+//            
+//            //| SUB_ID | SUB_CODE  | SEC_ID | SUB_NAME  | STAFF_ID |
+//            String sql = "UPDATE "+tableName+" SET SUB_CODE = ? , SEC_ID = ? , SUB_NAME = ? , STAFF_ID = ? WHERE "+primaryKey+" = ? ";
+//            PreparedStatement pst = con.prepareStatement(sql);
+//            
+//            pst.setString(1,text1);
+//            pst.setString(2,text2);
+//            pst.setString(3,text3);
+//            pst.setInt(4,Integer.parseInt(text4));
+//            pst.setString(5, key);
+//            
+//            return pst.executeUpdate();
+//            
+//            
+//        }
+    }
+
+    public int updateTheTable(String tableName, String primaryKey, String key, String text1, String text2, String text3, String text4, String text5, String text6, String text7, String text8, String text9) throws SQLException {
+
+        if (tableName.equalsIgnoreCase("class_timetable")) {
+            //| SL_NO | DAY| SEC_ID | P1| P2| P3| P4 | P5 | P6| P7|
+            String sql = "UPDATE " + tableName + " SET DAY = ? , SEC_ID = ? , P1 = ? , P2 = ? , P3 = ? , P4 = ? , P5 = ? , P6 = ? , P7 = ? WHERE " + primaryKey + " = ? ";
+
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, text1);
+            pst.setString(2, text2);
+            pst.setString(3, text3);
+            pst.setString(4, text4);
+            pst.setString(5, text5);
+            pst.setString(6, text6);
+            pst.setString(7, text7);
+            pst.setString(8, text8);
+            pst.setString(9, text9);
+            pst.setInt(10, Integer.parseInt(key));
+            
+            return pst.executeUpdate();
+
+        } else if (tableName.equalsIgnoreCase("teacher_timetable")) {
+            //| SL_NO | STAFF_ID | DAY| P1| P2| P3| P4| P5| P6| P7|
+            String sql = "UPDATE " + tableName + " SET STAFF_ID = ? , DAY = ? , P1 = ? , P2 = ? , P3 = ? , P4 = ? , P5 = ? , P6 = ? , P7 = ? WHERE " + primaryKey + " = ? ";
+
+               PreparedStatement pst = con.prepareStatement(sql);
+            pst.setInt(1, Integer.parseInt(text1));
+            pst.setString(2, text2);
+            pst.setString(3, text3);
+            pst.setString(4, text4);
+            pst.setString(5, text5);
+            pst.setString(6, text6);
+            pst.setString(7, text7);
+            pst.setString(8, text8);
+            pst.setString(9, text9);
+             pst.setInt(10, Integer.parseInt(key));
+            
+            return pst.executeUpdate();
+            
+            
+            
+       
+        
+        }
+
+        return 0;
 
     }
 
