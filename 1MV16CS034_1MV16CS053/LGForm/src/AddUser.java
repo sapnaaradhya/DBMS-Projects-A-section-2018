@@ -2,6 +2,7 @@
 import java.awt.event.WindowEvent;
 import java.awt.event.*;
 import java.awt.*;
+import javax.swing.JOptionPane;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -41,11 +42,11 @@ public class AddUser extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        FacName = new javax.swing.JTextField();
-        FacDept = new javax.swing.JTextField();
-        FacMail = new javax.swing.JTextField();
-        FacUsername = new javax.swing.JTextField();
-        FacPass = new javax.swing.JTextField();
+        n = new javax.swing.JTextField();
+        d = new javax.swing.JTextField();
+        e = new javax.swing.JTextField();
+        u = new javax.swing.JTextField();
+        p = new javax.swing.JTextField();
         FacCreate = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
@@ -74,11 +75,11 @@ public class AddUser extends javax.swing.JFrame {
 
         jLabel7.setText("Password      :");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 250, 86, -1));
-        getContentPane().add(FacName, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 84, 246, -1));
-        getContentPane().add(FacDept, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 125, 246, -1));
-        getContentPane().add(FacMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 169, 246, -1));
-        getContentPane().add(FacUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 208, 246, -1));
-        getContentPane().add(FacPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 247, 246, -1));
+        getContentPane().add(n, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 84, 246, -1));
+        getContentPane().add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 125, 246, -1));
+        getContentPane().add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 169, 246, -1));
+        getContentPane().add(u, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 208, 246, -1));
+        getContentPane().add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 247, 246, -1));
 
         FacCreate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         FacCreate.setText("CREATE");
@@ -93,19 +94,34 @@ public class AddUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FacCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacCreateActionPerformed
-        // TODO add your handling code here:
-         //AddUser ad=new AddUser();
-        //ad.setVisible(false);
-        //Close();
-        LoginForm L=new LoginForm();
-        L.setVisible(true);
-        this.dispose();
-       
+       try{
+           MySqlConnect obj=new MySqlConnect();
+           int name=n.getDocument().getLength();
+            int Email=e.getDocument().getLength();
+            int Dept=d.getDocument().getLength();
+            int Username=u.getDocument().getLength();
+            int pass=p.getDocument().getLength();
+            if(name==0||Email==0||Dept==0||Username==0||pass==0)
+            {
+                JOptionPane.showMessageDialog(null,"Please enter fields properly");
+            }
+           else{
+            obj.insertIntoStaffLogin(n.getText(),e.getText(),d.getText(),u.getText(),p.getText());
+            LoginForm L=new LoginForm();
+            L.setVisible(true);
+            this.dispose();
+            }
+                    
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null,ex);
+        }
+                                             
+    
+
+      
     }//GEN-LAST:event_FacCreateActionPerformed
-    public void Close(){
-        WindowEvent win=new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(win);
-    }
+   
     /**
      * @param args the command line arguments
      */
@@ -137,17 +153,15 @@ public class AddUser extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AddUser().setVisible(true);
-            }
+}
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FacCreate;
-    private javax.swing.JTextField FacDept;
-    private javax.swing.JTextField FacMail;
-    private javax.swing.JTextField FacName;
-    private javax.swing.JTextField FacPass;
-    private javax.swing.JTextField FacUsername;
+    private javax.swing.JTextField d;
+    private javax.swing.JTextField e;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -157,5 +171,8 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField n;
+    private javax.swing.JTextField p;
+    private javax.swing.JTextField u;
     // End of variables declaration//GEN-END:variables
 }

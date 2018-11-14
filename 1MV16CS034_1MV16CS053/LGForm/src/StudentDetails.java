@@ -1,13 +1,20 @@
 
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Suma
@@ -17,10 +24,14 @@ public class StudentDetails extends javax.swing.JFrame {
     /**
      * Creates new form StudentDetails
      */
+    
+    public String local_guardian_name;
     public StudentDetails() {
         initComponents();
         Toolkit tk = Toolkit.getDefaultToolkit();
         this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+   
+    
     }
 
     /**
@@ -48,7 +59,7 @@ public class StudentDetails extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboBranch = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         SLG = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -63,7 +74,7 @@ public class StudentDetails extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         SBlood = new javax.swing.JTextField();
         Stype = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboAd = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -127,8 +138,13 @@ public class StudentDetails extends javax.swing.JFrame {
         jLabel8.setText("Phone Number                      :");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 151, 21));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CHOOSE", "CIVIL ENGINEERING", "MECHANICAL ENGINEERING", "ELECTRICAL AND ELECTRONICS ENGINEERING", "ELECTRONICS AND COMMUNICATION ENGINEERING", "TELECOMMUNICATION ENGINEERING", "COMPUTER SCIENCE ENGINEERING", "INFORMATION SCIENCE ENGINEERING", "BIOTECHNOLOGY", "INDUSTRIAL ENGINEERING AND MANAGEMENT", " " }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 73, 461, -1));
+        comboBranch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CHOOSE", "CIVIL ENGINEERING", "MECHANICAL ENGINEERING", "ELECTRICAL AND ELECTRONICS ENGINEERING", "ELECTRONICS AND COMMUNICATION ENGINEERING", "TELECOMMUNICATION ENGINEERING", "COMPUTER SCIENCE ENGINEERING", "INFORMATION SCIENCE ENGINEERING", "BIOTECHNOLOGY", "INDUSTRIAL ENGINEERING AND MANAGEMENT", " " }));
+        comboBranch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBranchActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboBranch, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 73, 461, -1));
 
         jLabel18.setText("Local Guardian name             :");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 150, -1));
@@ -205,10 +221,10 @@ public class StudentDetails extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CHOOSE", "CET", "COMEDK", "MANAGEMENT" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        comboAd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CHOOSE", "CET", "COMEDK", "MANAGEMENT" }));
+        comboAd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                comboAdActionPerformed(evt);
             }
         });
 
@@ -242,7 +258,7 @@ public class StudentDetails extends javax.swing.JFrame {
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboAd, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SHobbies)
                     .addComponent(SBlood, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Stype, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -273,7 +289,7 @@ public class StudentDetails extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(comboAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -315,9 +331,9 @@ public class StudentDetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboAdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboAdActionPerformed
 
     private void SHobbiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SHobbiesActionPerformed
         // TODO add your handling code here:
@@ -340,40 +356,123 @@ public class StudentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_SMotherPhnActionPerformed
 
     private void AddStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStudActionPerformed
-        String student_name=Sname.getText();
-        String usn=Susn.getText();
-        String branch_name=Sname.getText();
-        String dob=Sdob.getText();
-        String email=Semail.getText();
-        String phone=SPhn.getText();
-        int phone_no=Integer.parseInt(phone);
-        String local_guardian_name=SLG.getText();
-        String address=SAddress.getText();
-        String stay_type=Stype.getText();
-        String blood_group=SBlood.getText();
-        String hobbies=SHobbies.getText();
-        String admission_category=SFatherName.getText();
-        String father_name=SFatherName.getText();
-        String father=SFatherPhn.getText();
-        int father_no=Integer.parseInt(father);
-        String mother_name=SMotherName.getText();
-        String mother=SMotherPhn.getText();
-        int mother_no=Integer.parseInt(mother);
-        try{
-            MySqlConnect obj=new MySqlConnect();
-            obj.insertIntoStudent(student_name, usn, branch_name, dob, email, phone_no, local_guardian_name, address, stay_type, blood_group, hobbies, admission_category, father_name, father_no, mother_name, mother_no);
-        }
-        catch(Exception ex){
-            JOptionPane.showMessageDialog(null,ex);
-        }
-        welcome w=new welcome();
-        w.setVisible(true);
-        this.dispose();
+
+            try {
+                MySqlConnect obj = new MySqlConnect();
+                obj.createTableStudent();
+                String student_name = Sname.getText();
+                String usn = Susn.getText();
+                String branch_name = comboBranch.getSelectedItem().toString();
+                String dob = Sdob.getText();
+                String email = Semail.getText();
+                String phone = SPhn.getText();
+                
+                //String phone_no=Integer.parseInt(phone);
+                local_guardian_name = SLG.getText();
+                String address = SAddress.getText();
+                String stay_type = Stype.getText();
+                String blood_group = SBlood.getText();
+                String hobbies = SHobbies.getText();
+                String admission_category = comboAd.getSelectedItem().toString();
+                String father_name = SFatherName.getText();
+                String father = SFatherPhn.getText();
+                //int father_no=Integer.parseInt(father);
+                String mother_name = SMotherName.getText();
+                String mother = SMotherPhn.getText();
+                //int mother_no=Integer.parseInt(mother);
+                
+                if ((student_name) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Name");
+                }
+                if ((usn) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Usn");
+                }
+                if ((branch_name) == null) {
+                    JOptionPane.showMessageDialog(null, " Please enter the Student Branch Name");
+                }
+                if ((dob) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Date of Birth");
+                }
+                if ((email) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Email");
+                }
+                if ((phone) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Phone Number");
+                }
+                if ((local_guardian_name) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Local Guardian Name");
+                }
+                if ((address) == null) {
+                    JOptionPane.showMessageDialog(null, " Please enter the Student's Permanent Address");
+                }
+                if ((stay_type) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Stay Type");
+                }
+                if ((blood_group) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Blood Group");
+                }
+                if ((hobbies) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Student Hobbies");
+                }
+                if ((admission_category) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Admission Category");
+                }
+                if ((father_name) == null) {
+                    JOptionPane.showMessageDialog(null, " Please enter the Student Father Name");
+                }
+                if ((father) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Father Phone Number");
+                }
+                if ((mother_name) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Mother Name");
+                }
+                if ((mother) == null) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Mother Phone Number");
+                }
+                
+                int n = obj.insertIntoStudent(student_name, usn, branch_name, dob, email, phone, local_guardian_name, address, stay_type, blood_group, hobbies, admission_category, father_name, father, mother_name, mother);
+                
+                if (n != 0) {
+                    JOptionPane.showMessageDialog(null, "successfully added");
+                } else {
+                    System.out.println("unsuccessful");
+                }
+                Connection con = null;
+                
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "1234");
+                    //JOptionPane.showMessageDialog(null,"Connected to Database");
+                } catch (Exception ex) {
+                    
+                }
+                String sql = "select usn,student_name from student where LOCAL_GUARDIAN_NAME=?";
+                PreparedStatement pat = con.prepareStatement(sql);
+                
+                pat.setString(1, local_guardian_name);
+                ResultSet rs = pat.executeQuery();
+                //if (rs.next()) {
+                    welcome w = new welcome(local_guardian_name);
+                    w.setVisible(true);
+                    w.JTableUsnName.setModel(DbUtils.resultSetToTableModel(rs));
+                    this.dispose();
+                //}
+                
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex);
+            } 
+            
+       
+
     }//GEN-LAST:event_AddStudActionPerformed
 
     private void SLGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SLGActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SLGActionPerformed
+
+    private void comboBranchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBranchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBranchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,10 +504,26 @@ public class StudentDetails extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentDetails().setVisible(true);
-            }
+                
+                    new StudentDetails().setVisible(true);
+                    
+                  
+                    
+                   
+                    
+                   
+                    
+                        
+                        
+                    
+                        
+                    }
+                
+                
+           
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddStud;
@@ -426,9 +541,9 @@ public class StudentDetails extends javax.swing.JFrame {
     private javax.swing.JTextField Sname;
     private javax.swing.JTextField Stype;
     private javax.swing.JTextField Susn;
+    private javax.swing.JComboBox<String> comboAd;
+    public javax.swing.JComboBox<String> comboBranch;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

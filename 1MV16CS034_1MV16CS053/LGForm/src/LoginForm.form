@@ -58,16 +58,16 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtusername">
+    <Component class="javax.swing.JTextField" name="user">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Username"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtusernameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="542" y="269" width="271" height="-1"/>
+          <AbsoluteConstraints x="530" y="270" width="271" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -144,10 +144,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="txtpassword">
+    <Component class="javax.swing.JPasswordField" name="pass">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="542" y="351" width="271" height="-1"/>
+          <AbsoluteConstraints x="530" y="350" width="280" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

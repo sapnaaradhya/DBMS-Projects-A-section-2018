@@ -1,31 +1,52 @@
 
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import static jdk.nashorn.internal.objects.NativeString.search;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Suma
  */
 public class welcome extends javax.swing.JFrame {
-    Connection con=null;
-    PreparedStatement pst=null;
-    ResultSet rs=null;
+
+    Connection con = null;
+    //PreparedStatement pst=null;
+    //ResultSet rs=null;
     /**
      * Creates new form welcome
      */
+    String LGName;
+
     public welcome() {
         initComponents();
         Toolkit tk = Toolkit.getDefaultToolkit();
-       this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+        this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+    }
+
+    public welcome(String LGName) {
+        initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+        this.LGName = LGName;
+
+        JLblName.setText(JLblName.getText() + " " + LGName);
+
+        System.out.println(this.getClass() + " " + LGName);
+
     }
 
     /**
@@ -37,26 +58,27 @@ public class welcome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        JLblName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
+        JTableUsnName = new javax.swing.JTable();
         AddStud = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        search = new javax.swing.JTextField();
-        BtnEnter = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         name = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        search = new javax.swing.JTextField();
+        BtnEnter1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(120, 250));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("LOCAL GUARDIAN NAME :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 32, 241, 27));
+        JLblName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        JLblName.setText("LOCAL GUARDIAN NAME :");
+        getContentPane().add(JLblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 32, 500, 27));
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        JTableUsnName.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null}
             },
@@ -64,9 +86,9 @@ public class welcome extends javax.swing.JFrame {
                 "Usn", "Name"
             }
         ));
-        jScrollPane1.setViewportView(table);
+        jScrollPane1.setViewportView(JTableUsnName);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 105, 403, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 403, 190));
 
         AddStud.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         AddStud.setText("ADD STUDENT");
@@ -75,112 +97,182 @@ public class welcome extends javax.swing.JFrame {
                 AddStudActionPerformed(evt);
             }
         });
-        getContentPane().add(AddStud, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 303, 152, -1));
+        getContentPane().add(AddStud, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, 152, -1));
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 60, 30));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("SEARCH STUDENT ");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setText("SEARCH STUDENT ");
 
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchActionPerformed(evt);
             }
         });
-
-        BtnEnter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        BtnEnter.setText("ENTER");
-        BtnEnter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnEnterActionPerformed(evt);
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchKeyPressed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("USN   :");
+        BtnEnter1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        BtnEnter1.setText("ENTER");
+        BtnEnter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEnter1ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("USN   :");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
                         .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(BtnEnter)))
+                        .addComponent(BtnEnter1)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(38, 38, 38)
-                .addComponent(BtnEnter)
+                .addComponent(BtnEnter1)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 79, -1, -1));
-        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 60, 30));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, -1, -1));
+
+        jButton1.setText("Delete Student");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-                // TODO add your handling code here:
-    }//GEN-LAST:event_searchActionPerformed
-
     private void AddStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStudActionPerformed
         // TODO add your handling code here:
-        StudentDetails S= new StudentDetails();
+
+        StudentDetails S = new StudentDetails();
         S.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_AddStudActionPerformed
 
-    private void BtnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEnterActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
-        try{
-            MySqlConnect obj=new MySqlConnect();
-            String usn=search.getText();
-            String sql="select usn from student where usn=?";
-            
-            PreparedStatement pst= con.prepareStatement(sql);
-            pst.setString(1, usn);
-            
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
-                Student S=new Student();
-        S.setVisible(true);
-        this.dispose();
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchKeyPressed
+
+    private void BtnEnter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEnter1ActionPerformed
+        // TODO add your handling code here:
+              // TODO add your handling code here:
+       // if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "1234");
+            String inusn = search.getText().trim();
+            String sql = "select usn from student where usn=? and LOCAL_GUARDIAN_NAME=?";
+
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, inusn);
+            pst.setString(2, LGName);
+
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                String value1 = rs.getString(1);
+                System.out.println(value1);
+                if (rs.getString(1).equals(inusn)) {
+                    System.out.println("hii");
+                    DisplayStudent S = new DisplayStudent(inusn,LGName);
+                    S.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Student doesnot exist");
+                   search.setText(null);
+                }
+                // else{
+
+            }else{
+                JOptionPane.showMessageDialog(null, "Empty Resultset");
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Student does not exist");
-            }
-            
-            
-        }catch(Exception ex){
+
+            // JOptionPane.showMessageDialog(null,"Student doesnot exist");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+
+      //  }
         }
-        Student S=new Student();
-        S.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_BtnEnterActionPerformed
+    }//GEN-LAST:event_BtnEnter1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+            //delete
+            //int n=  JTableUsnName.getSelectedRow();
+            //JTableUsnName.get
+            //JOptionPane.showMessageDialog(this, n);
+            DefaultTableModel model = (DefaultTableModel) JTableUsnName.getModel();
+            int SelectedRowIndex = JTableUsnName.getSelectedRow();
+            
+            String str = (String) model.getValueAt(SelectedRowIndex, 0);
+            model.removeRow(SelectedRowIndex);
+            JOptionPane.showMessageDialog(this, str);
+            
+            Connection conn = new MySqlConnect().con;
+            
+            String sql ="delete from student where usn= ? and local_guardian_name = ?;";
+            PreparedStatement pst =  conn.prepareStatement(sql);
+            pst.setString(1, str);
+            pst.setString(2, LGName);
+            
+            int n = pst.executeUpdate();
+            if(n==1){
+                JOptionPane.showMessageDialog(null, n+" rown got affected");
+            }else{
+                JOptionPane.showMessageDialog(null, n+"Error while deletion");
+            }
+                    
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(welcome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,14 +311,15 @@ public class welcome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddStud;
-    private javax.swing.JButton BtnEnter;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton BtnEnter1;
+    private javax.swing.JLabel JLblName;
+    public javax.swing.JTable JTableUsnName;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel name;
-    private javax.swing.JTextField search;
-    public javax.swing.JTable table;
+    public javax.swing.JTextField search;
     // End of variables declaration//GEN-END:variables
 }
