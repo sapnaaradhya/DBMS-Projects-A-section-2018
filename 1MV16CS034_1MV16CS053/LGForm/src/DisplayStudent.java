@@ -46,6 +46,10 @@ public class DisplayStudent extends javax.swing.JFrame {
     System.out.println(this.getClass()+" "+LgName);
     }
 
+    DisplayStudent(String inusn) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
     /**

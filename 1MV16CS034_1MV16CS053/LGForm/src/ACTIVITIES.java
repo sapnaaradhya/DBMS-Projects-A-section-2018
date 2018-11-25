@@ -299,7 +299,7 @@ public class ACTIVITIES extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //back button
-        DisplayStudent ds=new DisplayStudent();
+        DisplayStudent ds=new DisplayStudent(usn,LgName);
         ds.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

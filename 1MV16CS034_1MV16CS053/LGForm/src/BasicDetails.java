@@ -38,6 +38,7 @@ public class BasicDetails extends javax.swing.JFrame {
         this.LgName = LgName;
         JBtnUpdate.setEnabled(false);
         updateFields();
+        editFields(false);
     }
 
     public void updateFields() throws SQLException {
@@ -448,11 +449,11 @@ public class BasicDetails extends javax.swing.JFrame {
             String sql;
             String n = null;
             //String Susn=id.getText();
-            sql = "update student set student_name=?,dob=?,email=?,phone_no=?,local_guardian_name=?,address=?,stay_type=?,blood_group=?,hobbies=?,father_name=?,father_no=?,mother_name=?,mother_no=? where usn=?";
-            PreparedStatement pst = con.prepareStatement(sql);
+            sql = "update student set student_name=?,branch_name=?,dob=?,email=?,phone_no=?,local_guardian_name=?,address=?,stay_type=?,blood_group=?,hobbies=?,admission_category=?,father_name=?,father_no=?,mother_name=?,mother_no=? where usn=?";
+            PreparedStatement pst = obj.con.prepareStatement(sql);
 
             int a1 = Sname.getDocument().getLength();
-            //int a2= Sbranch.getDocument().getLength();
+            int a2= Sbranch.getDocument().getLength();
             int a3 = Sdob.getDocument().getLength();
             int a4 = SEmail.getDocument().getLength();
             int a5 = SPhn.getDocument().getLength();
@@ -460,9 +461,9 @@ public class BasicDetails extends javax.swing.JFrame {
             int a7 = Stype1.getDocument().getLength();
             int a8 = SBlood.getDocument().getLength();
             int a9 = SHobbies.getDocument().getLength();
-            //int a10=SAdmission.getDocument().getLength();
+            int a10=SAdmission.getDocument().getLength();
 
-            int a10 = SFatherName.getDocument().getLength();
+            //int a10 = SFatherName.getDocument().getLength();
             int a11 = SFatherPhn.getDocument().getLength();
             int a12 = SMotherName.getDocument().getLength();
             int a13 = SMotherPhn.getDocument().getLength();
@@ -474,21 +475,21 @@ public class BasicDetails extends javax.swing.JFrame {
 
             } else {
                 pst.setString(1, Sname.getText());
-                //pst.setString(2, Sbranch.getText());
-                pst.setString(2, Sdob.getText());
-                pst.setString(3, SEmail.getText());
-                pst.setString(4, SPhn.getText());
-                pst.setString(5, SLGName.getText());
-                pst.setString(6, SAddress.getText());
-                pst.setString(7, Stype1.getText());
-                pst.setString(8, SBlood.getText());
-                pst.setString(9, SHobbies.getText());
-                // pst.setString(8, SAdmission.getText());
-                pst.setString(10, SFatherName.getText());
-                pst.setString(11, SFatherPhn.getText());
-                pst.setString(12, SMotherName.getText());
-                pst.setString(13, SMotherPhn.getText());
-                //pst.setString(13, Susn.getText());
+                pst.setString(2, Sbranch.getText());
+                pst.setString(3, Sdob.getText());
+                pst.setString(4, SEmail.getText());
+                pst.setString(5, SPhn.getText());
+                pst.setString(6, SLGName.getText());
+                pst.setString(7, SAddress.getText());
+                pst.setString(8, Stype1.getText());
+                pst.setString(9, SBlood.getText());
+                pst.setString(10, SHobbies.getText());
+                pst.setString(11, SAdmission.getText());
+                pst.setString(12, SFatherName.getText());
+                pst.setString(13, SFatherPhn.getText());
+                pst.setString(14, SMotherName.getText());
+                pst.setString(15, SMotherPhn.getText());
+                pst.setString(16, Susn.getText());
 
                 int k = pst.executeUpdate();
                 if (k == 1) {
@@ -527,6 +528,7 @@ public class BasicDetails extends javax.swing.JFrame {
 
             }
         } catch (Exception e) {
+            System.out.println(e);
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_JBtnUpdateActionPerformed
@@ -534,12 +536,12 @@ public class BasicDetails extends javax.swing.JFrame {
     private void JBtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnEditActionPerformed
 
         //edit the fields
-        //editTheFields(true);
+        editFields(true);
         JBtnUpdate.setEnabled(true);
     }//GEN-LAST:event_JBtnEditActionPerformed
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
-        DisplayStudent ds = new DisplayStudent();
+        DisplayStudent ds = new DisplayStudent(usn,LgName);
         ds.setVisible(true);
         this.dispose();
         

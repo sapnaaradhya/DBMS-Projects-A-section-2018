@@ -18,7 +18,7 @@ public class MySqlConnect {
     public MySqlConnect() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "konda");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "1234");
             //JOptionPane.showMessageDialog(null,"Connected to Database");
         } catch (Exception ex) {
 
@@ -132,16 +132,16 @@ public class MySqlConnect {
         String sql = "CREATE TABLE IF NOT EXISTS MARKS(\n"
                 + "USN VARCHAR(10) NOT NULL,\n"
                 + "SUBJECT_CODE VARCHAR(5) NOT NULL,\n"
-                + "SEM INT(1) NOT NULL,\n"
-                + "IA1 INT(2) NOT NULL,\n"
-                + "AT1 INT(2) NOT NULL,\n"
-                + "IA2 INT(2) NOT NULL,\n"
-                + "AT2 INT(2) NOT NULL,\n"
-                + "IA3 INT(2) NOT NULL,\n"
-                + "AT3 INT(2) NOT NULL,\n"
-                + "AVERAGE INT(4) NOT NULL,\n"
+                + "SEM INT(1)  NULL,\n"
+                + "IA1 INT(2)  NULL,\n"
+                + "AT1 INT(2)  NULL,\n"
+                + "IA2 INT(2)  NULL,\n"
+                + "AT2 INT(2)  NULL,\n"
+                + "IA3 INT(2)  NULL,\n"
+                + "AT3 INT(2)  NULL,\n"
+                + "AVERAGE INT(10)  NULL,\n"
                 + "CONSTRAINT FK_M FOREIGN KEY(USN) REFERENCES STUDENT(USN) ON DELETE CASCADE,\n"
-                + "CONSTRAINT FK_A PRIMARY KEY(SUBJECT_CODE)"
+                //+ "CONSTRAINT FK_A PRIMARY KEY(SUBJECT_CODE)"
                 //+ "CONSTRAINT FK_R FOREIGN KEY(SEM) REFERENCES SEMESTER(SEM) ON DELETE CASCADE"
                 + ");";
 
@@ -188,7 +188,7 @@ public class MySqlConnect {
                 + "DATE DATE NOT NULL,\n"
                 + "ISSUE VARCHAR(99) NOT NULL,\n"
                 + "REMARKS VARCHAR(99) NOT NULL,\n"
-                + "CONSTRAINT PK_C PRIMARY KEY(COUNSELING_ID),\n"
+                //+ "CONSTRAINT PK_C PRIMARY KEY(COUNSELING_ID),\n"
                 + "CONSTRAINT JFK_CD FOREIGN KEY(USN) REFERENCES STUDENT(USN) ON DELETE CASCADE"
                 + ");";
 
@@ -452,19 +452,21 @@ public class MySqlConnect {
      //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    // }
 
-    public int insertIntMarks(String usn, String subject_code,String sem, String ia1, String at1, String ia2, String at2, String ia3, String at3) throws SQLException {
-        String query = "insert into Marks values(?,?,?,?,?,?,?,?,?)";
+    public int insertIntMarks(String usn, String subject_code,String sem, String ia1, String at1, String ia2, String at2, String ia3, String at3, String average) throws SQLException {
+        String query = "insert into Marks values(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement st = con.prepareStatement(query);
 
         st.setString(1, usn);
-        st.setString(2, subject_code);
-        st.setString(3, sem);
+        st.setString(3, subject_code);
+        st.setString(2, sem);
         st.setString(4, ia1);
         st.setString(5, at1);
         st.setString(6, ia2);
         st.setString(7, at2);
         st.setString(8, ia3);
         st.setString(9, at3);
+        st.setString(10, average);
+        
     
 
         int n = st.executeUpdate();

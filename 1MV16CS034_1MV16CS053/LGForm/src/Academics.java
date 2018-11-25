@@ -40,10 +40,11 @@ public class Academics extends javax.swing.JFrame {
 
     public void fetch() {
         try {
-            String q = "select * from semester";
+            String q = "select * from semester where usn = ?";
             MySqlConnect my = new MySqlConnect();
             Connection con = my.con;
             PreparedStatement pst = con.prepareStatement(q);
+            pst.setString(1, usn);
             ResultSet rs = pst.executeQuery();
             jTablea.setModel(DbUtils.resultSetToTableModel(rs));
 
