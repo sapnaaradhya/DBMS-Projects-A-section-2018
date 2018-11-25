@@ -13,8 +13,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import ui.AdminUpdate;
 
 /**
  *
@@ -34,7 +40,28 @@ class StaffInformation {
         System.out.println(dayOfWeek);
 
         System.out.println(obj.getSelectedRowFrom("admin", "1001"));
+         //obj.getBirthDays();
 
+         new Runnable() {
+            @Override
+            public void run() {
+                
+                             
+                    System.out.println("haui");
+                
+            }
+        };
+         
+         new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("haui");
+            }
+        }).start();
+        
+         
+         
+         
         // System.out.println(obj.getTeacherName("101", "P1", "MONDAY"));
     }
 
@@ -88,10 +115,12 @@ public class SQLDAO {
     ArrayList<String> bDaysEmail = new ArrayList<String>();
     ArrayList<String> bDaysNames = new ArrayList<String>();
 
+    HashMap<String, String> m = new HashMap<>();
+
     public void getBirthDays() throws SQLException {
 
-        ArrayList<String> bDaysEmail = new ArrayList<String>();
-        ArrayList<String> bDaysNames = new ArrayList<String>();
+        // ArrayList<String> bDaysEmail = new ArrayList<String>();
+        // ArrayList<String> bDaysNames = new ArrayList<String>();
         //  System.out.println(bDays.isEmpty());
         String sql = "SELECT DOB , EMAIL_ID , NAME FROM TEACHER";
 
@@ -104,12 +133,12 @@ public class SQLDAO {
         int day = cal.get(Calendar.DAY_OF_MONTH);
         int mon = cal.get(Calendar.MONTH);
 
-        // System.out.println(day);
-        // System.out.println(mon + 1);
+        System.out.println(day);
+        System.out.println(mon + 1);
         if (rs.next()) {
 
             if (Integer.parseInt(rs.getString(1).substring(5, 7)) == mon + 1 && Integer.parseInt(rs.getString(1).substring(8, 10)) == day) {
-                //System.out.println(rs.getString(1));
+                System.out.println(rs.getString(1));
                 bDaysEmail.add(rs.getString(2));
                 bDaysNames.add(rs.getString(3));
             }
@@ -117,13 +146,29 @@ public class SQLDAO {
             while (rs.next()) {
 
                 if (Integer.parseInt(rs.getString(1).substring(5, 7)) == mon + 1 && Integer.parseInt(rs.getString(1).substring(8, 10)) == day) {
-                    // System.out.println(rs.getString(1));
+                    System.out.println(rs.getString(1));
                     bDaysEmail.add(rs.getString(2));
                     bDaysNames.add(rs.getString(3));
                 }
 
             }
         }
+
+        MailTest mt = new MailTest();
+
+        for (int i = 0; i < bDaysEmail.size(); i++) {
+            //System.out.println(bDaysEmail.get(i));
+            //System.out.println(bDaysNames.get(i));
+            try {
+                mt.wisthOnBirthday(bDaysEmail.get(i), bDaysNames.get(i));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Please check your connection!!\n"
+                        + "Birthday wishes couldn't send to "+bDaysNames.get(i)+" .");
+              
+
+            }
+        }
+        
 
     }
 
@@ -308,7 +353,7 @@ public class SQLDAO {
             return "It's " + P;
         } else if (P.equals("SHORT BREAK")) {
             return "It's " + P;
-        }else if (P.equals("NOT college Hours")){
+        } else if (P.equals("NOT college Hours")) {
             return "It's " + P;
         }
 
@@ -1017,14 +1062,14 @@ public class SQLDAO {
             pst.setString(8, text8);
             pst.setString(9, text9);
             pst.setInt(10, Integer.parseInt(key));
-            
+
             return pst.executeUpdate();
 
         } else if (tableName.equalsIgnoreCase("teacher_timetable")) {
             //| SL_NO | STAFF_ID | DAY| P1| P2| P3| P4| P5| P6| P7|
             String sql = "UPDATE " + tableName + " SET STAFF_ID = ? , DAY = ? , P1 = ? , P2 = ? , P3 = ? , P4 = ? , P5 = ? , P6 = ? , P7 = ? WHERE " + primaryKey + " = ? ";
 
-               PreparedStatement pst = con.prepareStatement(sql);
+            PreparedStatement pst = con.prepareStatement(sql);
             pst.setInt(1, Integer.parseInt(text1));
             pst.setString(2, text2);
             pst.setString(3, text3);
@@ -1034,14 +1079,10 @@ public class SQLDAO {
             pst.setString(7, text7);
             pst.setString(8, text8);
             pst.setString(9, text9);
-             pst.setInt(10, Integer.parseInt(key));
-            
+            pst.setInt(10, Integer.parseInt(key));
+
             return pst.executeUpdate();
-            
-            
-            
-       
-        
+
         }
 
         return 0;

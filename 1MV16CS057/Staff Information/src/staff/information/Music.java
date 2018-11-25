@@ -6,7 +6,9 @@
 package staff.information;
 
 import com.sun.media.sound.*;
-import java.io.File;
+import java.io.*;
+import sun.audio.AudioStream;
+import sun.audio.AudioPlayer;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,8 +24,7 @@ import sun.audio.*;
 public class Music {
 
     public static void main(String[] args) throws IOException {
-
-        musicPlayer("C:\\Users\\Nasir Basha K\\Desktop\\DBMS Staff Info\\1MV16CS057\\Staff Information\\src\\audiofiles\\audio1.wav");
+  musicPlayer("C:\\Users\\Nasir Basha K\\Desktop\\DBMS Staff Info\\1MV16CS057\\Staff Information\\src\\audiofiles\\audio1.wav");
     }
     
     
@@ -32,12 +33,16 @@ public class Music {
     
     public static void musicPlayer(String filepath) throws FileNotFoundException, IOException{
         
-        
-        InputStream music = new FileInputStream(new File(filepath));
-        
-        AudioStream audio = new AudioStream(music);
+              try{
+ InputStream music = new FileInputStream(new File(filepath));
+       
+        AudioStream audio = new AudioStream(music); 
         AudioPlayer.player.start(audio);
         
+        }
+        catch(Exception e){
+            
+        }
         
     }
     
