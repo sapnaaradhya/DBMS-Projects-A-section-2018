@@ -8,12 +8,16 @@ package ui;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import staff.information.SQLDAO;
@@ -32,12 +36,69 @@ public class Login extends javax.swing.JFrame {
         initComponents();
 
         Toolkit tk = Toolkit.getDefaultToolkit();
-        // this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+         //this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
         this.setTitle("Login Form");
         this.setLocationRelativeTo(null);
         
-        
+        fullRight();
        
+    }
+    Random rand = new Random();
+    Timer tmRight;
+    
+    private void fullRight() {
+
+        System.out.println("Full Down");
+        tmRight = new Timer(50, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                JLblLogin.setLocation(JLblLogin.getLocation().x+5, JLblLogin.getLocation().y);
+                // JTxt2.setLocation(JTxt2.getLocation().x, JTxt2.getLocation().y + 5);
+
+                if (JLblLogin.getLocation().x + JLblLogin.getWidth()  > getContentPane().getWidth()) {
+
+                    JLblLogin.setLocation(JLblLogin.getLocation().x, JLblLogin.getLocation().y);
+                    // JTxt2.setLocation(JTxt2.getLocation().x, JTxt2.getLocation().y);
+
+                    tmRight.stop();
+                    fullLeft();
+                    //fullUp();
+                    //divideUp();
+                }
+
+            }
+        });
+        tmRight.start();
+
+    }
+    
+    Timer tmLeft;
+     private void fullLeft() {
+
+        System.out.println("Full Down");
+        tmLeft = new Timer(50, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                JLblLogin.setLocation(JLblLogin.getLocation().x-5, JLblLogin.getLocation().y );
+                // JTxt2.setLocation(JTxt2.getLocation().x, JTxt2.getLocation().y + 5);
+
+                if (JLblLogin.getLocation().x  < 0) {
+
+                    JLblLogin.setLocation(JLblLogin.getLocation().x, JLblLogin.getLocation().y);
+                    // JTxt2.setLocation(JTxt2.getLocation().x, JTxt2.getLocation().y);
+
+                    tmLeft.stop();
+                    fullRight();
+                    //fullUp();
+                    //divideUp();
+                }
+
+            }
+        });
+        tmLeft.start();
+
     }
 
     /**
@@ -59,7 +120,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        label1 = new java.awt.Label();
+        JLblLogin = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
         JTxtUserName = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -80,22 +141,22 @@ public class Login extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 165, 0));
 
-        jPanel1.setBackground(new java.awt.Color(255, 174, 25));
+        jPanel1.setBackground(new java.awt.Color(40, 40, 40));
 
-        jPanel2.setBackground(new java.awt.Color(255, 183, 50));
+        jPanel2.setBackground(new java.awt.Color(40, 40, 40));
 
-        jPanel3.setBackground(new java.awt.Color(255, 192, 76));
+        jPanel3.setBackground(new java.awt.Color(40, 40, 40));
         jPanel3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jPanel3FocusGained(evt);
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(255, 201, 102));
+        jPanel5.setBackground(new java.awt.Color(40, 40, 40));
 
-        label1.setFont(new java.awt.Font("Lucida Calligraphy", 3, 36)); // NOI18N
-        label1.setForeground(new java.awt.Color(50, 50, 50));
-        label1.setText("Login");
+        JLblLogin.setFont(new java.awt.Font("Lucida Calligraphy", 3, 36)); // NOI18N
+        JLblLogin.setForeground(new java.awt.Color(255, 255, 255));
+        JLblLogin.setText("Login");
 
         jLabel1.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
@@ -126,7 +187,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(472, 472, 472)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(JLblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(205, 205, 205)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +204,7 @@ public class Login extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JLblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,7 +317,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign in_1.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign in_2.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -264,7 +325,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sign-Up.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sign-Up_1.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -472,20 +533,20 @@ public class Login extends javax.swing.JFrame {
 
         //JOptionPane.showMessageDialog(null, "Hello");
         
-        if (!RdoAdmin.isSelected() && !Rdoteacher.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Please Select either Admin or Teacher");
-
-        } else if (RdoAdmin.isSelected()) {
-            //Admin wants to reset
-            new NewUser("ADMIN").setVisible(true);
-            dispose();
-
-        } else {
+//        if (!RdoAdmin.isSelected() && !Rdoteacher.isSelected()) {
+//            JOptionPane.showMessageDialog(null, "Please Select either Admin or Teacherr");
+//
+//        } else if (RdoAdmin.isSelected()) {
+//            //Admin wants to reset
+//            new NewUser("ADMIN").setVisible(true);
+//            dispose();
+//
+//        } else {
             //teacher wants to reset
             new NewUser("TEACHER").setVisible(true);
             dispose();
 
-        }
+       // }
 
 
     }//GEN-LAST:event_jLabel4MouseClicked
@@ -544,6 +605,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Label JLblLogin;
     private javax.swing.JPasswordField JPassword;
     private javax.swing.JTextField JTxtUserName;
     private javax.swing.JRadioButton RdoAdmin;
@@ -568,6 +630,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

@@ -48,7 +48,7 @@ public class AnimationWelcome extends javax.swing.JFrame {
 
     private void fullDown() {
 
-        System.out.println("Full Down");
+//        System.out.println("Full Down");
         tmDown = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -154,6 +154,7 @@ public class AnimationWelcome extends javax.swing.JFrame {
 
     }
 
+    
     private void openLogin() throws SQLException {
            skipped=true;
         new Login().setVisible(true);

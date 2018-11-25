@@ -317,19 +317,20 @@ public class NewUser extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         JLblTitle = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        JTxtDest = new javax.swing.JTextField();
-        JTxtName = new javax.swing.JTextField();
-        JTxtPhone = new javax.swing.JTextField();
-        JTxtDob = new javax.swing.JTextField();
-        JTxtUname = new javax.swing.JTextField();
-        JTxtEmail = new javax.swing.JTextField();
-        JPass2 = new javax.swing.JPasswordField();
-        JPass1 = new javax.swing.JPasswordField();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         JTxtOtp = new javax.swing.JTextField();
         JBtnOtp = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        JTxtPhone = new javax.swing.JTextField();
+        JPass1 = new javax.swing.JPasswordField();
+        JPass2 = new javax.swing.JPasswordField();
+        JTxtEmail = new javax.swing.JTextField();
+        JTxtName = new javax.swing.JTextField();
+        JTxtDob = new javax.swing.JTextField();
+        JTxtDest = new javax.swing.JTextField();
+        JTxtUname = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         JP4 = new javax.swing.JPanel();
         JP3 = new javax.swing.JPanel();
@@ -358,32 +359,32 @@ public class NewUser extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("DoB");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 101, 28));
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 101, 28));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Phone No.");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 101, 28));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 101, 28));
 
         jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("E mail Id");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 101, 28));
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 101, 28));
 
         jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("UserName");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 101, 28));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 101, 28));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Password");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 101, 28));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 101, 28));
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Confirm Password");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 30));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 30));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -398,7 +399,7 @@ public class NewUser extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -415,95 +416,6 @@ public class NewUser extends javax.swing.JFrame {
         JLblTitle.setText("New User");
 
         jPanel3.setBackground(new java.awt.Color(112, 112, 112));
-
-        JTxtDest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtDest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtDestActionPerformed(evt);
-            }
-        });
-        JTxtDest.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtDestKeyPressed(evt);
-            }
-        });
-
-        JTxtName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtNameActionPerformed(evt);
-            }
-        });
-        JTxtName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtNameKeyPressed(evt);
-            }
-        });
-
-        JTxtPhone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtPhone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtPhoneActionPerformed(evt);
-            }
-        });
-        JTxtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtPhoneKeyPressed(evt);
-            }
-        });
-
-        JTxtDob.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtDob.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtDobActionPerformed(evt);
-            }
-        });
-        JTxtDob.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtDobKeyPressed(evt);
-            }
-        });
-
-        JTxtUname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtUname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtUnameActionPerformed(evt);
-            }
-        });
-        JTxtUname.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtUnameKeyPressed(evt);
-            }
-        });
-
-        JTxtEmail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JTxtEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTxtEmailActionPerformed(evt);
-            }
-        });
-        JTxtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JTxtEmailKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                JTxtEmailKeyReleased(evt);
-            }
-        });
-
-        JPass2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JPass2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JPass2KeyPressed(evt);
-            }
-        });
-
-        JPass1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JPass1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                JPass1KeyPressed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("OTP");
@@ -560,57 +472,126 @@ public class NewUser extends javax.swing.JFrame {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JTxtPhone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtPhoneActionPerformed(evt);
+            }
+        });
+        JTxtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtPhoneKeyPressed(evt);
+            }
+        });
+        jPanel6.add(JTxtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 230, -1));
+
+        JPass1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JPass1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JPass1KeyPressed(evt);
+            }
+        });
+        jPanel6.add(JPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 259, 230, -1));
+
+        JPass2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JPass2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JPass2KeyPressed(evt);
+            }
+        });
+        jPanel6.add(JPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 305, 230, -1));
+
+        JTxtEmail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtEmailActionPerformed(evt);
+            }
+        });
+        JTxtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtEmailKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                JTxtEmailKeyReleased(evt);
+            }
+        });
+        jPanel6.add(JTxtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, -1));
+
+        JTxtName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtNameActionPerformed(evt);
+            }
+        });
+        JTxtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtNameKeyPressed(evt);
+            }
+        });
+        jPanel6.add(JTxtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 230, -1));
+
+        JTxtDob.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtDob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtDobActionPerformed(evt);
+            }
+        });
+        JTxtDob.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtDobKeyPressed(evt);
+            }
+        });
+        jPanel6.add(JTxtDob, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 230, -1));
+
+        JTxtDest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtDest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtDestActionPerformed(evt);
+            }
+        });
+        JTxtDest.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtDestKeyPressed(evt);
+            }
+        });
+        jPanel6.add(JTxtDest, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 230, -1));
+
+        JTxtUname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JTxtUname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTxtUnameActionPerformed(evt);
+            }
+        });
+        JTxtUname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                JTxtUnameKeyPressed(evt);
+            }
+        });
+        jPanel6.add(JTxtUname, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 212, 230, -1));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(JPass1)
-                                    .addComponent(JTxtUname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                    .addComponent(JTxtEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                    .addComponent(JPass2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTxtPhone, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JTxtDob, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                                    .addComponent(JTxtDest))
-                                .addGap(50, 50, 50)))
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(JTxtName, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(JTxtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(JTxtDest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(JTxtDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(JTxtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JTxtUname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JPass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JPass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(46, 46, 46)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/submit-button.png"))); // NOI18N
@@ -632,7 +613,7 @@ public class NewUser extends javax.swing.JFrame {
         JP1.setLayout(JP1Layout);
         JP1Layout.setHorizontalGroup(
             JP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1145, Short.MAX_VALUE)
+            .addGap(0, 1191, Short.MAX_VALUE)
         );
         JP1Layout.setVerticalGroup(
             JP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -675,7 +656,7 @@ public class NewUser extends javax.swing.JFrame {
             JP4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP4Layout.createSequentialGroup()
                 .addComponent(JP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 175, Short.MAX_VALUE))
+                .addGap(0, 203, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -724,8 +705,8 @@ public class NewUser extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(JP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(47, Short.MAX_VALUE)))
+                    .addComponent(JP4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -738,7 +719,7 @@ public class NewUser extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         pack();
@@ -1161,6 +1142,7 @@ public class NewUser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 
 }
