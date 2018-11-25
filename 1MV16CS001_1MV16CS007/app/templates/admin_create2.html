@@ -1,0 +1,68 @@
+<!-- Created by Abhijeet Singh -->
+<!-- admin_home.html -->
+{% extends "base.html" %}
+{% block title %}Admin Home{% endblock %}
+{% block body %}
+<div class="container">
+  <!-- Split button -->
+  <div class="col-md-12 btn-group">
+    <button type="button" class="btn">Action</button>
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{{ url_for('admin_create1') }}">Create Entry</a>
+      <a class="dropdown-item" href="#">Read Database</a>
+      <a class="dropdown-item" href="#">Update Database</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Delete Entry</a>
+    </div>
+  </div>
+  
+  <hr>
+  <!-- Split button -->
+  <div class="col-md-12 btn-group">
+        <button type="button" class="btn">Select table to create entry</button>
+        <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{ url_for('admin_create2') }}">student</a>
+          <a class="dropdown-item" href="#">teacher</a>
+          <a class="dropdown-item" href="#">local_guardian</a>
+          <a class="dropdown-item" href="#">course_info</a>
+        </div>
+  </div>
+
+  <hr>
+  <form class="mx-auto d-block col-md-7">
+      Create entry in student
+      <hr>
+      <div class="form-group"> <!-- Full Name -->
+        <label for="full_name_id" class="control-label">stud_id</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Enter Student ID">
+      </div>	
+
+      <div class="form-group"> <!-- Full Name -->
+        <label for="full_name_id" class="control-label">stud_name</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Enter Student Name">
+      </div>									
+                  
+      <div class="form-group"> <!-- Department Button -->
+        <label for="state_id" class="control-label">dept_name</label>
+        <select class="form-control" id="state_id">
+          <option value="Default">Select Department Name</option>
+          <option value="CSE">CSE</option>
+          <option value="ISE">ISE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+        </select>					
+      </div>		
+      
+      <div class="form-group"> <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>     
+    </form>
+
+</div> <!-- container -->
+{% endblock %}

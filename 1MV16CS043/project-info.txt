@@ -1,0 +1,8 @@
+1MV16CS043 : KRUTHI S
+1MV16CS015 : ANUKRITI TRIPATI
+
+PROJECT NAME : PET STORE MANAGEMENT DATABASE
+
+DESCRIPTION:
+The pet store managament database includes information about the pet store, the detailed information about every pet.
+And also information about the staff working at the store.
