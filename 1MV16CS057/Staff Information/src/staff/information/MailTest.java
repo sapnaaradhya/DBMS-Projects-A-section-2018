@@ -13,7 +13,6 @@ import javax.mail.PasswordAuthentication;
 public class MailTest {
 
     final String username = "nasirbashak007@gmail.com"; // enter your mail id
-
     final String password = "#Nasir@1997";// enter ur password
     
     
