@@ -134,12 +134,12 @@ public class Npage extends javax.swing.JFrame {
               Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/srs","root","dolly");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
 
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        String sql="DELETE FROM FACULTY WHERE FACULTY_ID="+fid.getText();
+        String sql="DELETE FROM FACULTY WHERE FACULTY_ID='"+fid.getText()+"' ";
         try{
             PreparedStatement ps=con.prepareStatement(sql);
        

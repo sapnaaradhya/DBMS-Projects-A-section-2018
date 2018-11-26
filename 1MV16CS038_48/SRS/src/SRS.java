@@ -2,13 +2,14 @@
 import com.mysql.jdbc.jdbc2.optional.PreparedStatementWrapper;
 import java.sql.*;
 import java.util.Scanner;
+import javax.swing.JTextField;
 
 public class SRS {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
 
-        SqlDao obj = new SqlDao();
+        SqlDao obj = new SqlDao(); 
 
         obj.createTableAdmin();
         obj.createTableCourse();
@@ -17,6 +18,8 @@ public class SRS {
         obj.createTableFaculty();
         obj.createTableFees();
         obj.createTableExams();
+       // obj.insertCourse("1","B.E");
+      //  obj.insertBranch("1","11","CSE","Bhanuprakash","5678");
     }       
         
 
@@ -32,15 +35,14 @@ class SqlDao {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/srs","root","dolly");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
 
         } catch (Exception ex) {
             System.out.println(ex);
         }
-
     }
 
-    public boolean createTableAdmin() throws SQLException {
+    public boolean createTableAdmin() throws Exception {
 
         String sql = "CREATE TABLE IF NOT EXISTS ADMIN\n"
                 + "(NAME VARCHAR(15) NOT NULL,\n"
@@ -56,7 +58,7 @@ class SqlDao {
 
 
     
-   public int insertAdmin(String name,String uname ,String pass) throws SQLException{
+   public int insertAdmin(String name,String uname ,String pass) throws Exception{
        
        
        String sql = "INSERT INTO ADMIN VALUES(?,?,?)";
@@ -77,7 +79,7 @@ class SqlDao {
     
 
 
-    public boolean createTableCourse() throws SQLException {
+    public boolean createTableCourse() throws Exception {
         String sql2 = "CREATE TABLE IF NOT EXISTS COURSE(\n"
                 + "COURSE_ID INT(2)NOT NULL,\n"
                 + "COURSE_NAME VARCHAR(9) NOT NULL,\n"
@@ -90,7 +92,7 @@ class SqlDao {
 
     }
 
-    public boolean createTableBranch() throws SQLException {
+    public boolean createTableBranch() throws Exception {
         String sql3 = "CREATE TABLE IF NOT EXISTS BRANCH(\n"
                 + "COURSE_ID INT(2) NOT NULL,\n"
                 + "BRANCH_ID INT(3),\n"
@@ -107,13 +109,13 @@ class SqlDao {
 
     }
 
-    public boolean createTableStudent() throws SQLException {
+    public boolean createTableStudent() throws Exception {
 
         String sql56 = "CREATE TABLE IF NOT EXISTS STUDENT(\n"
                 + "USN VARCHAR(10) NOT NULL,\n"
                 + "S_NAME VARCHAR(51) NOT NULL,\n"
                 + "GENDER CHAR(1) NOT NULL,\n"
-                + "DOB DATE NOT NULL,\n"
+                + "DOB DATE DEFAULT '00-00-0000',\n"
                 + "ADDRESS VARCHAR(99) NOT NULL,\n"
                 + "S_PHONE INT(10) NOT NULL,\n"
                 + "PARENT_NAME VARCHAR(51) NOT NULL,\n"
@@ -141,7 +143,7 @@ class SqlDao {
         return true;
     }
 
-    public int createTableFees() throws SQLException {
+    public int createTableFees() throws Exception {
         String sql4 = "CREATE TABLE IF NOT EXISTS FEES(\n"
                 + "RECEIPT_ID INT(9),\n"
                 + "USN VARCHAR(10),\n"
@@ -149,7 +151,7 @@ class SqlDao {
                 + "PAID_BY VARCHAR(51) NOT NULL,\n"
                 + "DUE_AMT INT(9) NOT NULL,\n"
                 + "CONSTRAINT PK_Ok PRIMARY KEY(RECEIPT_ID),\n"
-                + "CONSTRAINT FK_Kk FOREIGN KEY(USN) REFERENCES STUDENT(USN) ON DELETE CASCADE\n"
+                + "CONSTRAINT FK_Ka FOREIGN KEY(USN) REFERENCES STUDENT(USN) ON DELETE CASCADE\n"
                 + ");";
         PreparedStatement st4 = con.prepareStatement(sql4);
 
@@ -158,7 +160,7 @@ class SqlDao {
 
     }
 
-    public boolean createTableFaculty() throws SQLException {
+    public boolean createTableFaculty() throws Exception {
         String sql5 = "CREATE TABLE IF NOT EXISTS FACULTY\n"
                 + "(FACULTY_ID INT(2)NOT NULL,\n"
                 + "FACULTY_NAME INT(2)NOT NULL,\n"
@@ -168,7 +170,9 @@ class SqlDao {
                 + "QUALIFICATION VARCHAR(9) NOT NULL,\n"
                 + "PHONE_NO INT(10) NOT NULL,\n"
                 + "ADDRESS VARCHAR(90) NOT NULL,\n"
-                + "CONSTRAINT PK_N FOREIGN KEY(BRANCH_ID)REFERENCES BRANCH(BRANCH_ID)ON DELETE CASCADE\n "
+                 + "CONSTRAINT PK_PPk PRIMARY KEY(FACULTY_ID),\n"
+                + "CONSTRAINT PK_N FOREIGN KEY(BRANCH_ID)REFERENCES BRANCH(BRANCH_ID)ON DELETE CASCADE\n ,"
+                +"CONSTRAINT PK_NP FOREIGN KEY(COURSE_ID)REFERENCES COURSE(COURSE_ID)ON DELETE CASCADE\n"
                 + ");";
         Statement st5 = con.createStatement();
         st5.execute(sql5);
@@ -176,8 +180,8 @@ class SqlDao {
         return true;
     }
 
-    public boolean createTableExams() throws SQLException {
-        String sql6 = "CREATE TABLE IF NOT EXISTS EXAMS\n"
+    public boolean createTableExams() throws Exception {
+        String sql0 = "CREATE TABLE IF NOT EXISTS EXAMS\n"
                 + "(BRANCH_ID INT(3)NOT NULL,\n"
                 + "USN VARCHAR(10),\n"
                 + "SGPA1 FLOAT(4),\n"
@@ -189,27 +193,154 @@ class SqlDao {
                 + "SGPA7 FLOAT(4),\n"
                 + "SGPA8 FLOAT(4),\n"
                 + "CGPA FLOAT(4),\n"
-                + "CONSTRAINT FK_N FOREIGN KEY(USN)REFERENCES STUDENT(USN) ON DELETE CASCADE\n "
+                + "CONSTRAINT FK_N FOREIGN KEY(USN)REFERENCES STUDENT(USN) ON DELETE CASCADE\n ,"
+                +"CONSTRAINT FK_NN FOREIGN KEY(BRANCH_ID)REFERENCES BRANCH(BRANCH_ID)ON DELETE CASCADE\n"
                 + ");";
-        Statement st6 = con.createStatement();
-        st6.execute(sql6);
-        //con.close();
+       Statement st6 = con.createStatement();
+        st6.execute(sql0);
         return true;
+        //con.close();
+        
     }
     
+  public int insertStudent(String usn, String s_name, String gender,String dob,String address,String s_phone,String parent_name,String p_phone,
+             String guardian_name,String g_phone,String branch_id,String course_id,String aadhar_no,String stay_type,String age,String year_of_join,String present_sem,
+             String category_of_exam,String cet_comedk_other_rank,String puc,String tenth) throws Exception {
 
+        String sql = "INSERT INTO STUDENT VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-   
-}
+        PreparedStatement ps = con.prepareStatement(sql);
 
+        ps.setString(1, usn);
+        ps.setString(2, s_name);
+        ps.setString(3, gender);
+        ps.setString(4, dob);
+        ps.setString(5, address);
+        ps.setString(6, s_phone);
+        ps.setString(7, parent_name);
+        ps.setString(8, p_phone);
+        ps.setString(9, guardian_name);
+        ps.setString(10, g_phone);
+        ps.setString(11, branch_id);
+        ps.setString(12, course_id);
+        ps.setString(13, aadhar_no);
+        ps.setString(14, stay_type);
+        ps.setString(15, age);
+        ps.setString(16, year_of_join);
+        ps.setString(17, present_sem);
+        ps.setString(18, category_of_exam);
+        ps.setString(19, cet_comedk_other_rank);
+        ps.setString(20, puc);
+        ps.setString(21, tenth);
 
-<<<<<<< HEAD
-=======
         int n = ps.executeUpdate();
-        con.close();
+       // con.close();
+        return n;
+    }
+      public int insertFees(String receipt_id, String usn, String total_amtpaid,String paid_by,String due_amt) throws Exception {
+
+        String sql = "INSERT INTO FEES VALUES(?,?,?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, receipt_id);
+        ps.setString(2, usn);
+        ps.setString(3, total_amtpaid);
+        ps.setString(4, paid_by);
+        ps.setString(5, due_amt);
+
+
+        int n = ps.executeUpdate();
+        //con.close();
+        return n;
+    }
+       public int insertFaculty(String faculty_id, String faculty_name, String course_id,String branch_id,String faculty_salary,String qualification,String phone_no,
+               String address) throws Exception {
+
+        String sql = "INSERT INTO FACULTY VALUES(?,?,?,?,?,?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, faculty_id);
+        ps.setString(2, faculty_name);
+        ps.setString(3, course_id);
+        ps.setString(4, branch_id);
+        ps.setString(5, faculty_salary);
+        ps.setString(6, qualification);
+        ps.setString(7, phone_no);
+        ps.setString(8, address);
+
+        
+
+        int n = ps.executeUpdate();
+        //con.close();
+        return n;
+    }
+        public int insertExams(String branch_id, String usn, String sgpa1, String sgpa2, String sgpa3, String sgpa4, String sgpa5, String sgpa6,
+                 String sgpa7, String sgpa8, String cgpa) throws Exception {
+
+        String sql = "INSERT INTO EXAMS VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1, branch_id);
+        ps.setString(2, usn);
+        ps.setString(3, sgpa1);
+        ps.setString(4, sgpa2);
+        ps.setString(5, sgpa3);
+        ps.setString(6, sgpa4);
+        ps.setString(7, sgpa5);
+        ps.setString(8, sgpa6);
+        ps.setString(9, sgpa7);
+        ps.setString(10, sgpa8);
+        ps.setString(11, cgpa);
+        
+
+
+        int n = ps.executeUpdate();
+        //con.close();
         return n;
     }
 
+ public int insertCourse(String course_id,String course_name) throws Exception{
+       
+       
+       String sql = "INSERT INTO COURSE VALUES(?,?)";
+       
+       PreparedStatement ps = con.prepareStatement(sql);
+       
+       ps.setString(1, course_id);
+       ps.setString(2, course_name);
+      
+       
+       int n=ps.executeUpdate();
+       
+       return n;
+   } 
+  public int insertBranch(String course_id,String branch_id ,String branch_name ,String hod ,String contact_no) throws Exception    {
+       String sql = "INSERT INTO BRANCH VALUES(?,?,?,?,?)";
+       
+       PreparedStatement ps = con.prepareStatement(sql);
+       
+       ps.setString(1,course_id );
+       ps.setString(2, branch_id);
+       ps.setString(3, branch_name);
+       ps.setString(4, hod);
+       ps.setString(5, contact_no);
+       
+       int n=ps.executeUpdate();
+       
+       return n;
+   } 
+
+   
+   
 }
-}
->>>>>>> 495fbfb1a567a18340d205a6ed17cc55fd956afc
+   
+
+
+
+
+
+
+

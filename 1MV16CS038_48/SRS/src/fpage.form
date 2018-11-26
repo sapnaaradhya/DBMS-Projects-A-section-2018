@@ -197,6 +197,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="UPDATE FACULTY DETAILS"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

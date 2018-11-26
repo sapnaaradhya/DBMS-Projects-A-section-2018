@@ -1,3 +1,11 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -120,6 +128,11 @@ public class fpage extends javax.swing.JFrame {
         });
 
         jButton11.setText("UPDATE FACULTY DETAILS");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -235,6 +248,41 @@ public class fpage extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         Tepage te=new Tepage();
+            Connection con = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        try{
+            
+            
+            ResultSet rs=null;
+            
+            
+        String sql="SELECT s.usn,s.s_name FROM STUDENT S,FEES F WHERE F.DUE_AMT!=0 AND S.USN=F.USN";
+        PreparedStatement pst=con.prepareStatement(sql);   
+       // pst.setString(1,FID.getText());
+        rs=pst.executeQuery();
+         te.table3.setModel(DbUtils.resultSetToTableModel(rs));
+         rs=pst.executeQuery();
+        if(!rs.next())
+        {
+            //System.out.print(rs.getString("faculty_name"));
+           
+              JOptionPane.showMessageDialog(null, "Search  not found");
+             
+              
+       
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
         te.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -253,6 +301,14 @@ public class fpage extends javax.swing.JFrame {
         fi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        Updatef d=new Updatef();
+        d.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments

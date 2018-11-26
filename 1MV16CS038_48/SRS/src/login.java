@@ -192,7 +192,7 @@ public class login extends javax.swing.JFrame {
             String query="SELECT USER_NAME,PASSWORD FROM ADMIN WHERE USER_NAME=? AND PASSWORD=?;";
             
             Class.forName("com.mysql.jdbc.Driver");
-              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/srs", "root", "dolly");
+              Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
             PreparedStatement pst=con.prepareStatement(query);
            
                 pst.setString(1,jTextField1.getText());
@@ -203,7 +203,7 @@ public class login extends javax.swing.JFrame {
             
             if(pp.next()){
                 
-                Spage sg=new Spage();
+                fpage sg=new fpage();
                 sg.setVisible(true);
                 this.dispose();
             }
@@ -251,7 +251,7 @@ public class login extends javax.swing.JFrame {
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/srs", "root", "dolly");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
                 PreparedStatement pst=con.prepareStatement(query);
                 
                 pst.setString(1,jTextField1.getText());
@@ -262,7 +262,7 @@ public class login extends javax.swing.JFrame {
                 
                 if(pp.next()){
                     
-                    Spage sg=new Spage();
+                    fpage sg=new fpage();
                     sg.setVisible(true);
                     this.dispose();
                 }

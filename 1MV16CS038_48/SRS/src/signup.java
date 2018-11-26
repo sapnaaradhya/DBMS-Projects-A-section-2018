@@ -239,11 +239,7 @@ public class signup extends javax.swing.JFrame {
         
         SqlDao obj = new SqlDao();
         SqlDao obj2 = new SqlDao();
-        try {
-            boolean b= obj2.createTableAdmin();
-        } catch (SQLException ex) {
-            Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         int f1 = jTextField1.getDocument().getLength();
         int f2 = jTextField2.getDocument().getLength();
         int f3 = jPasswordField1.getDocument().getLength();
@@ -302,11 +298,7 @@ public class signup extends javax.swing.JFrame {
         {
        SqlDao obj = new SqlDao();
         SqlDao obj2 = new SqlDao();
-        try {
-            boolean b= obj2.createTableAdmin();
-        } catch (SQLException ex) {
-            Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
         int f1 = jTextField1.getDocument().getLength();
         int f2 = jTextField2.getDocument().getLength();
         int f3 = jPasswordField1.getDocument().getLength();

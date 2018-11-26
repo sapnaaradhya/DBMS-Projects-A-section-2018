@@ -38,17 +38,17 @@ public class S1page extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         rpt = new javax.swing.JTextField();
         ta = new javax.swing.JTextField();
-        ap = new javax.swing.JTextField();
         pb = new javax.swing.JTextField();
         da = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        usn = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,9 +62,6 @@ public class S1page extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("TOTAL AMT");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("AMT PAID");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("PAID BY");
@@ -85,8 +82,6 @@ public class S1page extends javax.swing.JFrame {
                 taActionPerformed(evt);
             }
         });
-
-        ap.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         pb.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -109,12 +104,17 @@ public class S1page extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("SUBMIT");
+        jButton3.setText("INSERT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("USN");
+
+        usn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,30 +130,24 @@ public class S1page extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
                         .addGap(106, 106, 106)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(rpt)
                             .addComponent(ta)
-                            .addComponent(ap)
                             .addComponent(pb)
-                            .addComponent(da, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
+                            .addComponent(da, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(usn)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
                         .addGap(146, 146, 146)
                         .addComponent(jButton3)
                         .addGap(59, 59, 59)
                         .addComponent(jButton1)
                         .addGap(79, 79, 79)
                         .addComponent(jButton2)))
-                .addContainerGap(223, Short.MAX_VALUE))
-=======
-                        .addGap(278, 278, 278)
-                        .addComponent(jButton1)))
                 .addContainerGap(213, Short.MAX_VALUE))
->>>>>>> 495fbfb1a567a18340d205a6ed17cc55fd956afc
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,23 +159,23 @@ public class S1page extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addComponent(jLabel2))
                     .addComponent(rpt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(ta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(ap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(pb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(da, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel3)
+                    .addComponent(ta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(pb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(da, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1)
@@ -202,7 +196,7 @@ public class S1page extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         pack();
@@ -230,27 +224,25 @@ public class S1page extends javax.swing.JFrame {
         // TODO add your handling code here:
          SqlDao obj = new SqlDao();
         SqlDao obj2 = new SqlDao();
-        try {
-            boolean b= obj2.createTableAdmin();
+      /*  try {
+           // boolean b= obj2.createTableAdmin();
         } catch (SQLException ex) {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Spage s=new Spage();
+        }*/
+      Spage s=new Spage();
         
         int f1 = rpt.getDocument().getLength();
         int f2 = ta.getDocument().getLength();
-        int f3 = ap.getDocument().getLength();
+        int f3=usn.getDocument().getLength();
         int f4 = pb.getDocument().getLength();
         int f5 = da.getDocument().getLength();
-        if(f1==0||f2==0||f3==0||f4==0||f5==0 ){
+        if(f1==0||f2==0||f4==0||f5==0||f3==0 ){
             JOptionPane.showMessageDialog(null, "Please enter the details properly");
         }else{
             try {
-              
-                   // JOptionPane.showMessageDialog(null,"Passwords  match");
-          
                 
-               int n= obj2.insertFees(rpt.getText(),s.usn.getText(), ta.getText(), ap.getText(), pb.getText(), da.getText());
+               int n;
+                n = obj.insertFees(rpt.getText(),usn.getText(), ta.getText(), pb.getText(), da.getText());
                 if(n==0){
                    JOptionPane.showMessageDialog(null, "Data not inserted");
                 }
@@ -261,7 +253,7 @@ public class S1page extends javax.swing.JFrame {
                 
             
             } catch (Exception ex) {
-               JOptionPane.showMessageDialog(null,"ex");
+               JOptionPane.showMessageDialog(null,ex);
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -308,7 +300,6 @@ public class S1page extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ap;
     private javax.swing.JTextField da;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -323,5 +314,6 @@ public class S1page extends javax.swing.JFrame {
     private javax.swing.JTextField pb;
     private javax.swing.JTextField rpt;
     private javax.swing.JTextField ta;
+    private javax.swing.JTextField usn;
     // End of variables declaration//GEN-END:variables
 }

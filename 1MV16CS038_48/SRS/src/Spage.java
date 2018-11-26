@@ -1,5 +1,9 @@
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -281,7 +285,7 @@ public class Spage extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jButton3.setText("SUBMIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -605,12 +609,15 @@ public class Spage extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
    SqlDao obj = new SqlDao();
+   
         SqlDao obj2 = new SqlDao();
-        try {
+       /* try {
             boolean b= obj2.createTableAdmin();
         } catch (SQLException ex) {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
+        
+
         int f1 = usn.getDocument().getLength();
         int f2 = name.getDocument().getLength();
         int f3 = gender.getDocument().getLength();
@@ -647,7 +654,7 @@ public class Spage extends javax.swing.JFrame {
                 }
                 
             catch (Exception ex) {
-               JOptionPane.showMessageDialog(null,"ex");
+               JOptionPane.showMessageDialog(null,ex);
             }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
