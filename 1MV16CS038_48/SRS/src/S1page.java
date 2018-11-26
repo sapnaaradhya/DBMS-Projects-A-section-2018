@@ -1,4 +1,5 @@
 
+import com.sun.glass.events.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -86,6 +87,11 @@ public class S1page extends javax.swing.JFrame {
         pb.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         da.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        da.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                daKeyPressed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("NEXT");
@@ -253,7 +259,7 @@ public class S1page extends javax.swing.JFrame {
                 
             
             } catch (Exception ex) {
-               JOptionPane.showMessageDialog(null,ex);
+               JOptionPane.showMessageDialog(null,"First fill up the basic details");
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -263,6 +269,51 @@ public class S1page extends javax.swing.JFrame {
           signup c=new signup();
         c.checknumber(rpt.getText());
     }//GEN-LAST:event_rptActionPerformed
+
+    private void daKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_daKeyPressed
+        // TODO add your handling code here:
+         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+           SqlDao obj = new SqlDao();
+        SqlDao obj2 = new SqlDao();
+      /*  try {
+           // boolean b= obj2.createTableAdmin();
+        } catch (SQLException ex) {
+            Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+      Spage s=new Spage();
+        
+        int f1 = rpt.getDocument().getLength();
+        int f2 = ta.getDocument().getLength();
+        int f3=usn.getDocument().getLength();
+        int f4 = pb.getDocument().getLength();
+        int f5 = da.getDocument().getLength();
+        if(f3>10)
+        {
+             JOptionPane.showMessageDialog(null, "Insert correct USN");
+        }
+        if(f1==0||f2==0||f4==0||f5==0||f3==0 ){
+            JOptionPane.showMessageDialog(null, "Please enter the details properly");
+        }else{
+            try {
+                
+               int n;
+                n = obj.insertFees(rpt.getText(),usn.getText(), ta.getText(), pb.getText(), da.getText());
+                if(n==0){
+                   JOptionPane.showMessageDialog(null, "Data not inserted");
+                }
+            
+                else{
+                    JOptionPane.showMessageDialog(null, "Data inserted successfully");
+                }
+                
+            
+            } catch (Exception ex) {
+               JOptionPane.showMessageDialog(null,"First fill up the basic details");
+            }
+        }    
+         }
+    }//GEN-LAST:event_daKeyPressed
     
     /**
      * @param args the command line arguments

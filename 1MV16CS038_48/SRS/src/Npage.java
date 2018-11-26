@@ -1,4 +1,5 @@
 
+import com.sun.glass.events.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -55,6 +56,11 @@ public class Npage extends javax.swing.JFrame {
         fid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fidActionPerformed(evt);
+            }
+        });
+        fid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fidKeyPressed(evt);
             }
         });
 
@@ -162,6 +168,36 @@ public class Npage extends javax.swing.JFrame {
         f.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void fidKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fidKeyPressed
+        // TODO add your handling code here:
+         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+         {
+                     Connection con = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        String sql="DELETE FROM FACULTY WHERE FACULTY_ID='"+fid.getText()+"' ";
+        try{
+            PreparedStatement ps=con.prepareStatement(sql);
+       
+        int n=ps.executeUpdate();
+     
+        if(n!=0)
+        {
+            JOptionPane.showMessageDialog(null,"Deleted successfull");
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Deletion not successfull");
+        }
+         }
+        catch(Exception e){}
+         }
+    }//GEN-LAST:event_fidKeyPressed
 
     /**
      * @param args the command line arguments

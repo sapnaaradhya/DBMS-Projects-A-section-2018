@@ -282,7 +282,83 @@ public class Fopage extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(evt.getKeyCode()==KeyEvent.VK_ENTER)
         {
+                    Connection con = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        try{
             
+            student s=new student();
+            ResultSet rs=null;
+            ResultSet rs1=null;
+            ResultSet rs2=null;
+            ResultSet rs3=null;
+            String m=usn.getText();
+            
+        String sql="SELECT usn,s_name,gender,dob,address,s_phone,parent_name,p_phone FROM student WHERE usn='"+m+"'";
+        String sql1="SELECT guardian_name,g_phone,branch_id,course_id,aadhar_no,stay_type,age,year_of_join FROM student WHERE usn='"+m+"'";
+        String sql2="SELECT s.present_sem,s.category_of_exam,s.cet_comedk_other_rank,s.puc,s.tenth,e.sgpa1,e.sgpa2,e.sgpa3 FROM student s ,exams e WHERE s.usn='"+m+"'"+"and s.usn=e.usn and s.branch_id=e.branch_id";
+        String sql3="SELECT e.sgpa4,e.sgpa5,e.sgpa6,e.sgpa7,e.sgpa8,e.cgpa,f.receipt_id,f.total_amtpaid,f.paid_by,f.due_amt FROM exams e ,fees f WHERE e.usn='"+m+"'"+"and e.usn=f.usn";
+        PreparedStatement pst=con.prepareStatement(sql);  
+        PreparedStatement pst1=con.prepareStatement(sql1);  
+        PreparedStatement pst2=con.prepareStatement(sql2);  
+        PreparedStatement pst3=con.prepareStatement(sql3);  
+       // pst.setString(1,FID.getText());
+        rs=pst.executeQuery();
+        table1.setModel(DbUtils.resultSetToTableModel(rs));
+         rs=pst.executeQuery();
+        if(!rs.next())
+        {
+            System.out.print(rs.getString("usn"));
+           
+              JOptionPane.showMessageDialog(null, "Search  not found");
+              usn.setText(null);
+              usn.requestFocusInWindow();
+        }
+        rs1=pst1.executeQuery();
+        table2.setModel(DbUtils.resultSetToTableModel(rs1));
+         rs1=pst1.executeQuery();
+        if(!rs1.next())
+        {
+            System.out.print(rs.getString("usn"));
+           
+              JOptionPane.showMessageDialog(null, "Search  not found");
+              usn.setText(null);
+              usn.requestFocusInWindow();
+        }
+         rs2=pst2.executeQuery();
+        table3.setModel(DbUtils.resultSetToTableModel(rs2));
+         rs2=pst2.executeQuery();
+        if(!rs2.next())
+        {
+            System.out.print(rs.getString("usn"));
+           
+              JOptionPane.showMessageDialog(null, "Search  not found");
+              usn.setText(null);
+              usn.requestFocusInWindow();
+        }
+       
+        rs3=pst3.executeQuery();
+        table4.setModel(DbUtils.resultSetToTableModel(rs3));
+         rs3=pst3.executeQuery();
+        if(!rs3.next())
+        {
+            System.out.print(rs.getString("usn"));
+           
+              JOptionPane.showMessageDialog(null, "Search  not found");
+              usn.setText(null);
+              usn.requestFocusInWindow();
+        }
+       
+       
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
         }
     }//GEN-LAST:event_usnKeyPressed
 
