@@ -1,0 +1,100 @@
+<!-- Created by Abhijeet Singh -->
+<!-- student_home.html -->
+{% extends "base.html" %}
+{% block title %}Student Home{% endblock %}
+{% block body %}
+<div class="container">
+  <table class="table table-bordered table-hover table-responsive">
+    <caption>{{ name }}</caption>
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">9:00-9:55</th>
+        <th scope="col">9:55-10:50</th>
+        <th scope="col">Tea Break</th>
+        <th scope="col">11:00-11:55</th>
+        <th scope="col">11:55-12:50</th>
+        <th scope="col">Lunch Break</th>
+        <th scope="col">01:35-02:30</th>
+        <th scope="col">02:30-03:25</th>
+        <th scope="col">03:25-04:20</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Monday</th>
+        <td>15CS51</td>
+        <td>15CS54</td>
+        <td></td>
+        <td>Elective1</td>
+        <td>Elective2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Tuesday</th>
+        <td>15CS53</td>
+        <td>15CS52</td>
+        <td></td>
+        <td>15CS51</td>
+        <td>Elective2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Wednesday</th>
+        <td>15CS54</td>
+        <td>15CS53</td>
+        <td></td>
+        <td>Elective1</td>
+        <td>Elective2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Thursday</th>
+        <td>15CS54</td>
+        <td>15CS51</td>
+        <td></td>
+        <td>15CS52</td>
+        <td>Elective2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Friday</th>
+        <td>Elective1</td>
+        <td>15CS51</td>
+        <td></td>
+        <td>15CS53</td>
+        <td>15CS52</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Saturday</th>
+        <td>15CS54</td>
+        <td>15CS53</td>
+        <td></td>
+        <td>15CS52</td>
+        <td>Elective1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div> <!-- container -->
+
+{% endblock %}

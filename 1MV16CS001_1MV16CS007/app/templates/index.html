@@ -1,0 +1,51 @@
+<!-- Created by Abhijeet Singh -->
+<!-- index.html -->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<main role="main">
+
+      <!-- Main display -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Automated Timetable</h1>
+          <p>This project aims at automatically creating timetables for college lectures with a heuristic approach using genetic algorithms.</p>
+          <p><a class="btn btn-primary btn-lg" href="{{ url_for('index_all') }}" role="button">View all &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Stakeholders -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Student</h2>
+            <p>Students can view their class timetable and Local Guardian information.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Staff</h2>
+            <p>The staff can view their weekly schedule, submit subject preferences and leave information.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Admin</h2>
+            <p>Admins can create, read, update and delete entries from the database and edit timetables.</p>
+          </div>
+        </div>
+
+        <!-- Login buttons -->
+        <div class="row">
+          <div class="col-md-4">
+            <p><a class="btn btn-secondary" href="{{ url_for('signin_student') }}" role="button">Student Login &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <p><a class="btn btn-secondary" href="{{ url_for('signin_staff') }}" role="button">Staff Login &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <p><a class="btn btn-secondary" href="{{ url_for('signin_admin') }}" role="button">Admin Login &raquo;</a></p>
+          </div>
+        </div>
+
+        <hr>
+        <img class="mx-auto d-block" src="/static/img/bg.jpg" alt="Error in loading image">
+      </div> <!-- /container -->
+</main>
+{% endblock %}
