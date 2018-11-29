@@ -26,7 +26,6 @@ public class SRS {
 
 }
 
-
 class SqlDao {
 
     Connection con = null;
@@ -250,6 +249,7 @@ class SqlDao {
         ps.setString(5, due_amt);
 
 
+
         int n = ps.executeUpdate();
         //con.close();
         return n;
@@ -336,11 +336,5 @@ class SqlDao {
    
    
 }
-   
-
-
-
-
-
 
 
