@@ -1,6 +1,7 @@
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -24,6 +25,9 @@ public class COUNSELLING extends javax.swing.JFrame {
      */
     public COUNSELLING() {
         initComponents();
+         Toolkit tk = Toolkit.getDefaultToolkit();
+        this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+
     }
     String usn;
     String LgName;
@@ -49,6 +53,7 @@ public class COUNSELLING extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
@@ -68,32 +73,78 @@ public class COUNSELLING extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         JUsn = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transp.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel11.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel11.setLayout(null);
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 51, 51));
         jButton3.setText("SUBMIT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel11.add(jButton3);
+        jButton3.setBounds(470, 310, 147, 25);
 
-        jLabel26.setText("SEMESTER                            :");
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel26.setText("SEMESTER                    :");
+        jPanel11.add(jLabel26);
+        jLabel26.setBounds(390, 100, 131, 28);
 
-        jLabel27.setText("COUNSELING_ID                   :");
+        jLabel27.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel27.setText("COUNSELING_ID         :");
+        jPanel11.add(jLabel27);
+        jLabel27.setBounds(390, 130, 131, 30);
 
-        jLabel28.setText("DATE                                      :");
+        jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel28.setText("DATE                              :");
+        jPanel11.add(jLabel28);
+        jLabel28.setBounds(390, 170, 131, 32);
 
-        jLabel29.setText("ISSUES                                    :");
+        jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel29.setText("ISSUES                            :");
+        jPanel11.add(jLabel29);
+        jLabel29.setBounds(390, 210, 131, 29);
 
-        jLabel30.setText("REMARKS                               :");
+        jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel30.setText("REMARKS                      :");
+        jPanel11.add(jLabel30);
+        jLabel30.setBounds(390, 250, 131, 31);
+
+        csem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csemActionPerformed(evt);
+            }
+        });
+        jPanel11.add(csem);
+        csem.setBounds(540, 100, 130, 24);
 
         cid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cidActionPerformed(evt);
             }
         });
+        jPanel11.add(cid);
+        cid.setBounds(540, 140, 130, 25);
+        jPanel11.add(cdate);
+        cdate.setBounds(540, 180, 130, 20);
+        jPanel11.add(issue);
+        issue.setBounds(540, 210, 130, 29);
+        jPanel11.add(remarks);
+        remarks.setBounds(540, 260, 130, 20);
 
         ctable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,124 +159,54 @@ public class COUNSELLING extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(ctable);
 
+        jPanel11.add(jScrollPane3);
+        jScrollPane3.setBounds(520, 390, 594, 112);
+
+        jButton1.setBackground(new java.awt.Color(153, 0, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 204, 204));
         jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel11.add(jButton1);
+        jButton1.setBounds(670, 310, 73, 25);
+        jPanel11.add(JLblUsn);
+        JLblUsn.setBounds(1044, 60, 129, 25);
 
-        jLabel2.setText("USN                                       :");
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2.setText("USN                                :");
+        jPanel11.add(jLabel2);
+        jLabel2.setBounds(390, 70, 131, 29);
 
+        JUsn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        JUsn.setForeground(new java.awt.Color(255, 204, 204));
         JUsn.setText("usn");
+        jPanel11.add(JUsn);
+        JUsn.setBounds(540, 70, 116, 17);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
         jLabel1.setText("COUNSELLING DETAILS");
+        jPanel11.add(jLabel1);
+        jLabel1.setBounds(420, 10, 433, 42);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(csem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .addComponent(cdate, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(issue, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(remarks, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cid, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JUsn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                .addGap(243, 243, 243)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                .addGap(242, 242, 242)
-                                .addComponent(jLabel1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JLblUsn, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(955, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(JLblUsn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1)))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(JUsn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(19, 19, 19)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(csem, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(cid, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cdate)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(issue, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(remarks)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
-                .addGap(210, 210, 210))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/transp.png"))); // NOI18N
+        jPanel11.add(jLabel4);
+        jLabel4.setBounds(10, 260, 510, 470);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
         );
 
         pack();
@@ -270,6 +251,10 @@ public class COUNSELLING extends javax.swing.JFrame {
         ds.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void csemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_csemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,7 +307,9 @@ public class COUNSELLING extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField remarks;
