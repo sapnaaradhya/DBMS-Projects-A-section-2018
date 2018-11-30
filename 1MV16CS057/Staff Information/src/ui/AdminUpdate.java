@@ -32,6 +32,19 @@ public class AdminUpdate extends javax.swing.JFrame {
         initComponents();
 
         fillComboTablesList();
+        
+         new Thread(new Runnable() {
+            @Override
+            public void run() {
+                
+                try {             
+                    new SQLDAO().getBirthDays();
+                } catch (SQLException ex) {
+                    Logger.getLogger(AdminUpdate.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }).start();
+        
     }
 
  public   AdminUpdate(String name) throws SQLException {
@@ -39,6 +52,20 @@ public class AdminUpdate extends javax.swing.JFrame {
         initComponents();
         this.name=name;
         fillComboTablesList();
+        
+       new Thread(new Runnable() {
+            @Override
+            public void run() {
+                
+                try {             
+                    new SQLDAO().getBirthDays();
+                } catch (SQLException ex) {
+                    Logger.getLogger(AdminUpdate.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }).start();
+       
+        
         
    
     
