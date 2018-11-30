@@ -1,2 +1,0 @@
-Flask
-cx_Oracle

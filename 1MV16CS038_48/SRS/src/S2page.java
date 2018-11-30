@@ -1,5 +1,9 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -329,15 +333,55 @@ public class S2page extends javax.swing.JFrame {
         int f6 = s6.getDocument().getLength();
         int f7 = s7.getDocument().getLength();
         int f8 = s8.getDocument().getLength();
-        int f9 = c.getDocument().getLength();
+     
+             int d1=Integer.parseInt(s1.getText());
+             int d2=Integer.parseInt(s2.getText());
+             int d3=Integer.parseInt(s3.getText());
+             int d4=Integer.parseInt(s4.getText());
+             int d5=Integer.parseInt(s5.getText());
+             int d6=Integer.parseInt(s6.getText());
+             int d7=Integer.parseInt(s7.getText());
+             int d8=Integer.parseInt(s8.getText());
+           int c1=(d1+d2+d3+d4+d5+d6+d7+d8)/8;
+            String str=Integer.toString(c1);
+                   
+                           
         int f10 = id.getDocument().getLength();
         int f11 = usn.getDocument().getLength();
         
-        if(f1==0||f2==0||f3==0||f4==0||f5==0||f6==0||f7==0||f8==0||f9==0||f10==0||f11==0 ){
+        if(f1==0||f2==0||f3==0||f4==0||f5==0||f6==0||f7==0||f8==0||f10==0||f11==0 ){
             JOptionPane.showMessageDialog(null, "Please enter the details properly");
         }
+         Connection con = null;
+
+    
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
              try{   
-               int n= obj2.insertExams(id.getText(),usn.getText(),s1.getText(), s2.getText(), s3.getText(), s4.getText(), s5.getText(), s6.getText(), s7.getText(), s8.getText(), c.getText());
+                String sql = "INSERT INTO EXAMS VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setString(1,id.getText() );
+        ps.setString(2, usn.getText());
+        ps.setString(3, s1.getText());
+        ps.setString(4, s2.getText());
+        ps.setString(5, s3.getText());
+        ps.setString(6, s4.getText());
+        ps.setString(7, s5.getText());
+        ps.setString(8, s6.getText());
+           ps.setString(11,c.getText());
+        ps.setString(9, s7.getText());
+        ps.setString(10, s8.getText());
+        int n = ps.executeUpdate();
+        //con.close();
+        
                 if(n==0){
                    JOptionPane.showMessageDialog(null, "Data not inserted");
                 }
@@ -347,7 +391,7 @@ public class S2page extends javax.swing.JFrame {
                 
                 
             } catch (Exception ex) {
-               JOptionPane.showMessageDialog(null,"ex");
+               JOptionPane.showMessageDialog(null,ex);
             }
     
     }//GEN-LAST:event_jButton1ActionPerformed

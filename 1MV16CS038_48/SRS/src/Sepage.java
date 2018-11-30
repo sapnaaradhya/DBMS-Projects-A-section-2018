@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyEvent;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -68,6 +70,12 @@ public class Sepage extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        bid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                bidKeyPressed(evt);
             }
         });
 
@@ -148,7 +156,9 @@ public class Sepage extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        try{
+        
+
+  try{
             
             
             ResultSet rs=null;
@@ -156,10 +166,13 @@ public class Sepage extends javax.swing.JFrame {
         String sql="SELECT faculty_id,faculty_name FROM FACULTY WHERE branch_id='"+m+"'";
         PreparedStatement pst=con.prepareStatement(sql);   
        // pst.setString(1,FID.getText());
-            rs=pst.executeQuery();
-            table.setModel(DbUtils.resultSetToTableModel(rs));
-              rs=pst.executeQuery();
-              if(!rs.next())
+String query1 = "{CALL inc(?)}";
+CallableStatement stmt = con.prepareCall(query1);
+stmt.setString(1, m);
+ResultSet rs1 = stmt.executeQuery();
+            table.setModel(DbUtils.resultSetToTableModel(rs1));
+              rs1=pst.executeQuery();
+              if(!rs1.next())
               {
                   JOptionPane.showMessageDialog(null,"Search not found");
               }
@@ -182,6 +195,51 @@ public class Sepage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void bidKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bidKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
+        {
+            
+         Connection con = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        
+
+  try{
+            
+                   ResultSet rs=null;
+            String m=bid.getText();
+        String sql="SELECT faculty_id,faculty_name FROM FACULTY WHERE branch_id='"+m+"'";
+        PreparedStatement pst=con.prepareStatement(sql);   
+       // pst.setString(1,FID.getText());
+String query1 = "{CALL inc(?)}";
+CallableStatement stmt = con.prepareCall(query1);
+stmt.setString(1, m);
+ResultSet rs1 = stmt.executeQuery();
+            table.setModel(DbUtils.resultSetToTableModel(rs1));
+              rs1=pst.executeQuery();
+              if(!rs1.next())
+              {
+                  JOptionPane.showMessageDialog(null,"Search not found");
+              }
+              
+              
+     
+           
+        
+       
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+    }//GEN-LAST:event_bidKeyPressed
+    }
     /**
      * @param args the command line arguments
      */

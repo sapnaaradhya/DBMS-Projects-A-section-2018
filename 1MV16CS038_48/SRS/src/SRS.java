@@ -294,9 +294,6 @@ class SqlDao {
         ps.setString(9, sgpa7);
         ps.setString(10, sgpa8);
         ps.setString(11, cgpa);
-        
-
-
         int n = ps.executeUpdate();
         //con.close();
         return n;

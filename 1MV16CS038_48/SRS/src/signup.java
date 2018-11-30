@@ -34,6 +34,7 @@ public class signup extends javax.swing.JFrame {
         for(char c:s.toCharArray())
         {
             if(Character.isDigit(c))
+                
                 return true;
         }
         return false;
@@ -46,6 +47,7 @@ public class signup extends javax.swing.JFrame {
         for(char c:s.toCharArray())
         {
             if(!Character.isDigit(c))
+               
                 return true;
         }
         return false;

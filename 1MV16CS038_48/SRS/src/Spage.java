@@ -172,6 +172,11 @@ public class Spage extends javax.swing.JFrame {
                 gnameActionPerformed(evt);
             }
         });
+        gname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                gnameKeyReleased(evt);
+            }
+        });
 
         name.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         name.addActionListener(new java.awt.event.ActionListener() {
@@ -578,7 +583,13 @@ public class Spage extends javax.swing.JFrame {
     private void gnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gnameActionPerformed
         // TODO add your handling code here:
           signup c=new signup();
-        c.checkstring(gname.getText());
+       boolean a= c.checkstring(gname.getText());
+       if(a)
+       {
+           JOptionPane.showMessageDialog(null,"Please enter characters , numbers are not allowed");
+           gname.setText(null);
+           gname.requestFocusInWindow();
+       }
                                  
     }//GEN-LAST:event_gnameActionPerformed
 
@@ -655,10 +666,24 @@ public class Spage extends javax.swing.JFrame {
                 
             catch (Exception ex) {
                JOptionPane.showMessageDialog(null,ex);
-            }        // TODO add your handling code here:
+            } 
+        }
+       // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    } 
+    private void gnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gnameKeyReleased
+        // TODO add your handling code here:
+          signup c=new signup();
+       boolean a= c.checkstring(gname.getText());
+       if(a)
+       {
+           JOptionPane.showMessageDialog(null,"Please enter characters , numbers are not allowed");
+           gname.setText(null);
+           gname.requestFocusInWindow();
+       }
+    }//GEN-LAST:event_gnameKeyReleased
+
+     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -1,3 +1,0 @@
-project topic : e-question generator 
-team: ankit mandal
-      Hemang choudhary 
