@@ -25,6 +25,8 @@ public class Updatef extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setBounds(350,40, 700,600);
+        
     }
 
     /**
@@ -36,20 +38,18 @@ public class Updatef extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jTxt29 = new javax.swing.JLabel();
-        jTxt30 = new javax.swing.JLabel();
-        jTxt31 = new javax.swing.JLabel();
-        jTxt32 = new javax.swing.JLabel();
-        jTxt33 = new javax.swing.JLabel();
-        jTxt34 = new javax.swing.JLabel();
-        jTxt35 = new javax.swing.JLabel();
-        jTxt37 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         cid = new javax.swing.JTextField();
-        jTxt36 = new javax.swing.JLabel();
         bid = new javax.swing.JTextField();
         sal = new javax.swing.JTextField();
         qua = new javax.swing.JTextField();
@@ -57,89 +57,103 @@ public class Updatef extends javax.swing.JFrame {
         add = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        ffid = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
+        getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("UPDATE FACULTY DETAILS");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(219, 0, 290, 29);
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-
-        jTxt29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt29.setText("FACULTY ID");
-
-        jTxt30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt30.setText("FACULTY NAME");
-
-        jTxt31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt31.setText("COURSE ID");
-
-        jTxt32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt32.setText("BRANCH ID");
-
-        jTxt33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt33.setText("FACULTY SALARY");
-
-        jTxt34.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt34.setText("QUALIFICATIONS");
-
-        jTxt35.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt35.setText("PHONE NUMBER");
-
-        jTxt37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTxt37.setText("ADDRESS");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("FACULTY ID");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(210, 80, 118, 22);
 
         id.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                idKeyPressed(evt);
+            }
+        });
+        getContentPane().add(id);
+        id.setBounds(410, 70, 127, 30);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("FACULTY NAME");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(209, 134, 126, 22);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("COURSE ID");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(209, 190, 92, 22);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("BRANCH ID");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(209, 245, 93, 22);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("FACULTY SALARY");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(209, 291, 141, 22);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("QUALIFICATIONS");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(209, 358, 143, 22);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("PHONE NUMBER");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(209, 424, 133, 22);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setText("ADDRESS");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(209, 486, 76, 22);
 
         name.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(name);
+        name.setBounds(409, 131, 127, 28);
 
         cid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cidActionPerformed(evt);
-            }
-        });
-
-        jTxt36.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTxt36.setText("   UPDATE  FACULTY");
+        getContentPane().add(cid);
+        cid.setBounds(409, 187, 127, 28);
 
         bid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        bid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bidActionPerformed(evt);
-            }
-        });
+        getContentPane().add(bid);
+        bid.setBounds(409, 242, 127, 28);
 
         sal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(sal);
+        sal.setBounds(409, 288, 127, 28);
 
         qua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        qua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quaActionPerformed(evt);
-            }
-        });
+        getContentPane().add(qua);
+        qua.setBounds(409, 355, 127, 28);
 
         pno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(pno);
+        pno.setBounds(409, 418, 127, 28);
 
         add.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentRemoved(java.awt.event.ContainerEvent evt) {
-                addComponentRemoved(evt);
-            }
-        });
-        add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addActionPerformed(evt);
-            }
-        });
-        add.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                addKeyPressed(evt);
-            }
-        });
+        getContentPane().add(add);
+        add.setBounds(409, 483, 127, 28);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("UPDATE");
@@ -148,6 +162,8 @@ public class Updatef extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(262, 529, 99, 31);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("BACK");
@@ -156,322 +172,100 @@ public class Updatef extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(408, 529, 77, 31);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("ENTER FACULTY ID");
-
-        ffid.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ffidKeyPressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(jTxt29, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTxt30, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt31, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt32, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt33, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt34, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt35, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxt37, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(169, 169, 169)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                            .addComponent(name)
-                            .addComponent(cid)
-                            .addComponent(bid)
-                            .addComponent(sal)
-                            .addComponent(qua)
-                            .addComponent(pno)
-                            .addComponent(add)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jButton1)
-                        .addGap(47, 47, 47)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(jTxt36, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(ffid, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jTxt36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(ffid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt30)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt31)
-                    .addComponent(cid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt32)
-                    .addComponent(bid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTxt33)
-                    .addComponent(sal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt34)
-                    .addComponent(qua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTxt35)
-                    .addComponent(pno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt37)
-                    .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/i9.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(0, -6, 730, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidActionPerformed
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cidActionPerformed
+    }//GEN-LAST:event_idActionPerformed
 
-    private void bidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bidActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bidActionPerformed
-
-    private void quaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quaActionPerformed
-
-    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addActionPerformed
-
-    private void addKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
-        {
-          try{
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
-             
-             String sql;
-             String n=null;
-             String fid=id.getText();
-             sql="update faculty set faculty_name=?,course_id=?,branch_id=?,faculty_salary=?,qualification=?,phone_no=?,address=? where faculty_id=?";
-             PreparedStatement pst=conn.prepareStatement(sql);
-            
-             int a2=id.getDocument().getLength();
-             int a3=name.getDocument().getLength();
-             int a8=cid.getDocument().getLength();
-             int a5=bid.getDocument().getLength();
-             int a6=sal.getDocument().getLength();
-             int a7=qua.getDocument().getLength();
-             int a9=pno.getDocument().getLength();
-              int a10=add.getDocument().getLength();
-              
-             if((a2==0)||(a5==0)||(a6==0)||(a9==0)||(a3==0)||(a8==0)||(a7==0)||(a10==0))
-             {
-                   
-                            JOptionPane.showMessageDialog(null, "Please Enter All The Details");
-                     
-             }
-          
-             else{             
-                 pst.setString(1, name.getText());
-                 pst.setString(2, cid.getText());
-                 pst.setString(3, bid.getText());
-                 pst.setString(4, sal.getText());
-                 pst.setString(5, qua.getText());
-                 pst.setString(6, pno.getText());
-                 pst.setString(7, add.getText());
-                 pst.setString(8,ffid.getText());
-                  
-                                 int k= pst.executeUpdate();
-                                 if(k==1)
-                                 {
-                                 JOptionPane.showMessageDialog(null, "successfully Updated "+  this.id.getText()+ " In Faculty");
-                                 this.id.setText(null);
-                                 
-                                 name.setText(null);
-                                 cid.setText(null);
-                                 bid.setText(null);
-                                 sal.setText(null);
-                                 qua.setText(null);
-                                 pno.setText(null);
-                                add.setText(null);
-                                 }
-                                 else
-                                 {
-                                     JOptionPane.showMessageDialog(null, "Not updated");
-                                 this.id.setText(null);
-                                 
-                                 name.setText(null);
-                                 cid.setText(null);
-                                 bid.setText(null);
-                                 sal.setText(null);
-                                 qua.setText(null);
-                                 pno.setText(null);
-                                add.setText(null);
-                                 
-                                 }
-                                 
-                             
-                                 
-                              
-                                     
-                                 
-             }
-        }
-            
-        
-            catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null,e);
-            }   
-        }
-        
-            // TODO add your handling code here:
-    }//GEN-LAST:event_addKeyPressed
+    }//GEN-LAST:event_nameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         // TODO add your handling code here
         try{
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
-             
-             String sql;
-             String n=null;
-             String fid=id.getText();
-             sql="update faculty set faculty_name=?,course_id=?,branch_id=?,faculty_salary=?,qualification=?,phone_no=?,address=? where faculty_id=?";
-             PreparedStatement pst=conn.prepareStatement(sql);
-            
-             int a2=id.getDocument().getLength();
-             int a3=name.getDocument().getLength();
-             int a8=cid.getDocument().getLength();
-             int a5=bid.getDocument().getLength();
-             int a6=sal.getDocument().getLength();
-             int a7=qua.getDocument().getLength();
-             int a9=pno.getDocument().getLength();
-              int a10=add.getDocument().getLength();
-              
-             if((a2==0)||(a5==0)||(a6==0)||(a9==0)||(a3==0)||(a8==0)||(a7==0)||(a10==0))
-             {
-                   
-                            JOptionPane.showMessageDialog(null, "Please Enter All The Details");
-                     
-             }
-          
-             else{             
-                 pst.setString(1, name.getText());
-                 pst.setString(2, cid.getText());
-                 pst.setString(3, bid.getText());
-                 pst.setString(4, sal.getText());
-                 pst.setString(5, qua.getText());
-                 pst.setString(6, pno.getText());
-                 pst.setString(7, add.getText());
-                 pst.setString(8,ffid.getText());
-                  
-                                 int k= pst.executeUpdate();
-                                 if(k==1)
-                                 {
-                                 JOptionPane.showMessageDialog(null, "successfully Updated "+  this.id.getText()+ " In Faculty");
-                                 this.id.setText(null);
-                                 
-                                 name.setText(null);
-                                 cid.setText(null);
-                                 bid.setText(null);
-                                 sal.setText(null);
-                                 qua.setText(null);
-                                 pno.setText(null);
-                                add.setText(null);
-                                 }
-                                 else
-                                 {
-                                     JOptionPane.showMessageDialog(null, "Not updated");
-                                 this.id.setText(null);
-                                 
-                                 name.setText(null);
-                                 cid.setText(null);
-                                 bid.setText(null);
-                                 sal.setText(null);
-                                 qua.setText(null);
-                                 pno.setText(null);
-                                add.setText(null);
-                                 
-                                 }
-                                 
-                             
-                                 
-                              
-                                     
-                                 
-             }
-        }
-            
-        
-            catch(Exception e)
-            {
-                JOptionPane.showMessageDialog(null,e);
-            }
-       
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
 
+            String sql;
+            String n=null;
+            String fid=id.getText();
+            sql="update faculty set faculty_name=?,course_id=?,branch_id=?,faculty_salary=?,qualification=?,phone_no=?,address=? where faculty_id=?";
+            PreparedStatement pst=conn.prepareStatement(sql);
+
+            int a2=id.getDocument().getLength();
+            int a3=name.getDocument().getLength();
+            int a8=cid.getDocument().getLength();
+            int a5=bid.getDocument().getLength();
+            int a6=sal.getDocument().getLength();
+            int a7=qua.getDocument().getLength();
+            int a9=pno.getDocument().getLength();
+            int a10=add.getDocument().getLength();
+
+            if((a2==0)||(a5==0)||(a6==0)||(a9==0)||(a3==0)||(a8==0)||(a7==0)||(a10==0))
+            {
+
+                JOptionPane.showMessageDialog(null, "Please Enter All The Details");
+
+            }
+
+            else{
+                pst.setString(1, name.getText());
+                pst.setString(2, cid.getText());
+                pst.setString(3, bid.getText());
+                pst.setString(4, sal.getText());
+                pst.setString(5, qua.getText());
+                pst.setString(6, pno.getText());
+                pst.setString(7, add.getText());
+                pst.setString(8,id.getText());
+
+                int k= pst.executeUpdate();
+                if(k==1)
+                {
+                    JOptionPane.showMessageDialog(null, "successfully Updated "+  this.id.getText()+ " In Faculty");
+                    this.id.setText(null);
+
+                    name.setText(null);
+                    cid.setText(null);
+                    bid.setText(null);
+                    sal.setText(null);
+                    qua.setText(null);
+                    pno.setText(null);
+                    add.setText(null);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Not updated");
+                    this.id.setText(null);
+                    
+                    name.setText(null);
+                    cid.setText(null);
+                    bid.setText(null);
+                    sal.setText(null);
+                    qua.setText(null);
+                    pno.setText(null);
+                    add.setText(null);
+
+                }
+
+            }
+        }
+
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -481,29 +275,28 @@ public class Updatef extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void ffidKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ffidKeyPressed
+    private void idKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idKeyPressed
         // TODO add your handling code here:
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER)
-        {
-            try{
+         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+         try{
              Class.forName("com.mysql.jdbc.Driver");
              Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "dolly");
             String sql="select * from faculty where faculty_id=?";
             PreparedStatement pst=conn.prepareStatement(sql);
-            int a1=ffid.getDocument().getLength();
+            int a1=id.getDocument().getLength();
             if(a1==0)
             {
-                JOptionPane.showMessageDialog(null,"Please enter Faculty id");
+                JOptionPane.showMessageDialog(null,"Please enter faculty id");
                 
             }
             else
             {
-                pst.setString(1,ffid.getText());
+                pst.setString(1,id.getText());
                 ResultSet rs=pst.executeQuery();
                 if(!rs.next())
                 {
-                    JOptionPane.showMessageDialog(null, "faculty id does not exist");
-                    ffid.setText(null);
+                    JOptionPane.showMessageDialog(null, "faculty does not exist");
+                    id.setText(null);
                     
                 }
                 else
@@ -513,9 +306,9 @@ public class Updatef extends javax.swing.JFrame {
                     cid.setText(rs.getString("course_id"));
                     bid.setText(rs.getString("branch_id"));
                     sal.setText(rs.getString("faculty_salary"));
-                    qua.setText(rs.getString("qualification"));
-                    pno.setText(rs.getString("phone_no"));
-                    add.setText(rs.getString("address"));
+                     qua.setText(rs.getString("qualification"));
+                      pno.setText(rs.getString("phone_no"));
+                       add.setText(rs.getString("address"));
                     conn.close();;
                 }   
             }
@@ -525,13 +318,8 @@ public class Updatef extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-         
-        }
-    }//GEN-LAST:event_ffidKeyPressed
-
-    private void addComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_addComponentRemoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addComponentRemoved
+    }                         
+    }//GEN-LAST:event_idKeyPressed
 
     /**
      * @param args the command line arguments
@@ -572,22 +360,19 @@ public class Updatef extends javax.swing.JFrame {
     private javax.swing.JTextField add;
     private javax.swing.JTextField bid;
     private javax.swing.JTextField cid;
-    private javax.swing.JTextField ffid;
     private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel jTxt29;
-    private javax.swing.JLabel jTxt30;
-    private javax.swing.JLabel jTxt31;
-    private javax.swing.JLabel jTxt32;
-    private javax.swing.JLabel jTxt33;
-    private javax.swing.JLabel jTxt34;
-    private javax.swing.JLabel jTxt35;
-    private javax.swing.JLabel jTxt36;
-    private javax.swing.JLabel jTxt37;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField name;
     private javax.swing.JTextField pno;
     private javax.swing.JTextField qua;

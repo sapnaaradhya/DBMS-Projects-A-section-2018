@@ -28,6 +28,7 @@ public class Spage extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setBounds(0,0, 2000, 600);
         
     }
 
@@ -88,6 +89,8 @@ public class Spage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -95,69 +98,112 @@ public class Spage extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.CardLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setLayout(null);
 
         jusn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jusn.setText("USN");
+        jPanel2.add(jusn);
+        jusn.setBounds(48, 75, 34, 22);
 
         jsname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jsname.setText("S_NAME");
+        jPanel2.add(jsname);
+        jsname.setBounds(48, 128, 67, 22);
 
         jgender.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jgender.setText("GENDER");
+        jPanel2.add(jgender);
+        jgender.setBounds(140, 170, 67, 22);
 
         jdob.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jdob.setText("DOB");
+        jPanel2.add(jdob);
+        jdob.setBounds(210, 230, 36, 22);
 
         jaddress.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress.setText("ADDRESS");
+        jPanel2.add(jaddress);
+        jaddress.setBounds(130, 290, 76, 22);
 
         jaddress1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress1.setText("S_PHONE");
+        jPanel2.add(jaddress1);
+        jaddress1.setBounds(190, 350, 77, 22);
 
         jaddress2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress2.setText("PARENT_NAME");
+        jPanel2.add(jaddress2);
+        jaddress2.setBounds(210, 410, 122, 22);
 
         jaddress3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress3.setText("P_PHONE");
+        jPanel2.add(jaddress3);
+        jaddress3.setBounds(960, 380, 77, 22);
 
         jaddress4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress4.setText("GUARDIAN_NAME");
+        jPanel2.add(jaddress4);
+        jaddress4.setBounds(460, 340, 145, 22);
 
         jaddress5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress5.setText("G_PHONE");
+        jPanel2.add(jaddress5);
+        jaddress5.setBounds(520, 410, 79, 22);
 
         jaddress6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress6.setText("BRANCH_ID");
+        jPanel2.add(jaddress6);
+        jaddress6.setBounds(962, 113, 97, 22);
 
         jaddress7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress7.setText("COURSE_ID");
+        jPanel2.add(jaddress7);
+        jaddress7.setBounds(460, 70, 96, 22);
 
         jaddress8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress8.setText("AADHAR_NO");
+        jPanel2.add(jaddress8);
+        jaddress8.setBounds(460, 113, 103, 22);
 
         jaddress10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jaddress10.setText("STAY TYPE");
+        jPanel2.add(jaddress10);
+        jaddress10.setBounds(460, 171, 89, 22);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("AGE");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(962, 70, 33, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("YEAR OF JOIN");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(962, 162, 116, 22);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("PRESENT SEM");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(460, 232, 114, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("CATEGORY OF EXAM");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(450, 290, 168, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("RANK OF EXAM");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(960, 320, 124, 22);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("PUC%");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(962, 218, 51, 22);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel15.setText("TENTH%");
+        jPanel2.add(jLabel15);
+        jLabel15.setBounds(962, 265, 74, 22);
 
         pphone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pphone.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +211,13 @@ public class Spage extends javax.swing.JFrame {
                 pphoneActionPerformed(evt);
             }
         });
+        pphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                pphoneKeyReleased(evt);
+            }
+        });
+        jPanel2.add(pphone);
+        pphone.setBounds(1140, 380, 165, 28);
 
         gname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         gname.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +230,8 @@ public class Spage extends javax.swing.JFrame {
                 gnameKeyReleased(evt);
             }
         });
+        jPanel2.add(gname);
+        gname.setBounds(640, 360, 176, 28);
 
         name.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         name.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +239,13 @@ public class Spage extends javax.swing.JFrame {
                 nameActionPerformed(evt);
             }
         });
+        name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nameKeyReleased(evt);
+            }
+        });
+        jPanel2.add(name);
+        name.setBounds(233, 125, 165, 28);
 
         parent.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         parent.addActionListener(new java.awt.event.ActionListener() {
@@ -191,6 +253,13 @@ public class Spage extends javax.swing.JFrame {
                 parentActionPerformed(evt);
             }
         });
+        parent.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                parentKeyReleased(evt);
+            }
+        });
+        jPanel2.add(parent);
+        parent.setBounds(340, 410, 165, 28);
 
         sphone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sphone.addActionListener(new java.awt.event.ActionListener() {
@@ -198,6 +267,13 @@ public class Spage extends javax.swing.JFrame {
                 sphoneActionPerformed(evt);
             }
         });
+        sphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sphoneKeyReleased(evt);
+            }
+        });
+        jPanel2.add(sphone);
+        sphone.setBounds(280, 350, 165, 28);
 
         address.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         address.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +281,8 @@ public class Spage extends javax.swing.JFrame {
                 addressActionPerformed(evt);
             }
         });
+        jPanel2.add(address);
+        address.setBounds(233, 291, 165, 30);
 
         dob.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dob.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +290,8 @@ public class Spage extends javax.swing.JFrame {
                 dobActionPerformed(evt);
             }
         });
+        jPanel2.add(dob);
+        dob.setBounds(290, 230, 165, 28);
 
         gender.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         gender.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +299,8 @@ public class Spage extends javax.swing.JFrame {
                 genderActionPerformed(evt);
             }
         });
+        jPanel2.add(gender);
+        gender.setBounds(233, 171, 165, 28);
 
         usn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         usn.addActionListener(new java.awt.event.ActionListener() {
@@ -226,8 +308,12 @@ public class Spage extends javax.swing.JFrame {
                 usnActionPerformed(evt);
             }
         });
+        jPanel2.add(usn);
+        usn.setBounds(233, 72, 165, 28);
 
         category.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(category);
+        category.setBounds(640, 290, 176, 28);
 
         presentsem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         presentsem.addActionListener(new java.awt.event.ActionListener() {
@@ -235,14 +321,29 @@ public class Spage extends javax.swing.JFrame {
                 presentsemActionPerformed(evt);
             }
         });
+        jPanel2.add(presentsem);
+        presentsem.setBounds(632, 230, 176, 28);
 
         gphone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        gphone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                gphoneKeyReleased(evt);
+            }
+        });
+        jPanel2.add(gphone);
+        gphone.setBounds(640, 410, 176, 28);
 
         branchid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(branchid);
+        branchid.setBounds(1138, 113, 167, 28);
 
         rank.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(rank);
+        rank.setBounds(1140, 320, 170, 28);
 
         courseid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(courseid);
+        courseid.setBounds(632, 67, 176, 28);
 
         aadharno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         aadharno.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +351,13 @@ public class Spage extends javax.swing.JFrame {
                 aadharnoActionPerformed(evt);
             }
         });
+        aadharno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                aadharnoKeyReleased(evt);
+            }
+        });
+        jPanel2.add(aadharno);
+        aadharno.setBounds(632, 113, 176, 28);
 
         age.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         age.addActionListener(new java.awt.event.ActionListener() {
@@ -257,12 +365,20 @@ public class Spage extends javax.swing.JFrame {
                 ageActionPerformed(evt);
             }
         });
+        jPanel2.add(age);
+        age.setBounds(1138, 67, 164, 28);
 
         staytype.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(staytype);
+        staytype.setBounds(632, 171, 176, 28);
 
         yoj.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(yoj);
+        yoj.setBounds(1138, 159, 167, 28);
 
         puc.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.add(puc);
+        puc.setBounds(1138, 215, 167, 28);
 
         tenth.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tenth.addActionListener(new java.awt.event.ActionListener() {
@@ -270,9 +386,13 @@ public class Spage extends javax.swing.JFrame {
                 tenthActionPerformed(evt);
             }
         });
+        jPanel2.add(tenth);
+        tenth.setBounds(1138, 262, 167, 28);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("ENTER STUDENT DETAILS");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(540, 10, 280, 29);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("NEXT");
@@ -281,6 +401,8 @@ public class Spage extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(620, 490, 80, 25);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("BACK");
@@ -289,6 +411,8 @@ public class Spage extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton2);
+        jButton2.setBounds(800, 490, 72, 25);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jButton3.setText("SUBMIT");
@@ -297,233 +421,15 @@ public class Spage extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton3);
+        jButton3.setBounds(480, 490, 87, 25);
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(930, 600, 440, 50);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(333, 333, 333)
-                .addComponent(jLabel4)
-                .addContainerGap(753, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jgender)
-                            .addComponent(jdob)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jsname)
-                                                            .addComponent(jusn))
-                                                        .addGap(118, 118, 118))
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jaddress)
-                                                        .addGap(109, 109, 109)))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jaddress1)
-                                                    .addGap(108, 108, 108)))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jaddress2)
-                                                .addGap(63, 63, 63)))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jaddress3)
-                                            .addGap(108, 108, 108)))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(pphone, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                                        .addComponent(parent)
-                                        .addComponent(sphone)
-                                        .addComponent(address)
-                                        .addComponent(usn)
-                                        .addComponent(name)
-                                        .addComponent(dob)))))
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton3)
-                        .addGap(15, 15, 15)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jaddress7)
-                                .addGap(76, 76, 76)
-                                .addComponent(courseid, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jaddress8)
-                                                .addComponent(jaddress10)
-                                                .addComponent(jLabel3))
-                                            .addGap(58, 58, 58))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jaddress4))
-                                        .addGap(27, 27, 27)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(staytype, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                    .addComponent(aadharno)
-                                    .addComponent(gname)
-                                    .addComponent(category)
-                                    .addComponent(rank)
-                                    .addComponent(presentsem)
-                                    .addComponent(gphone)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(154, 154, 154)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jaddress6)
-                                    .addComponent(jLabel1))
-                                .addGap(79, 79, 79)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(branchid, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel2))
-                                .addGap(60, 60, 60)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(yoj, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                                    .addComponent(puc)
-                                    .addComponent(tenth))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jaddress5)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(180, 180, 180)))
-                        .addGap(602, 602, 602))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jusn)
-                            .addComponent(usn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(courseid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jaddress7)
-                            .addComponent(jLabel1)
-                            .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jsname)
-                                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jaddress8)
-                            .addComponent(aadharno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jgender)
-                            .addComponent(staytype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jaddress10)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(branchid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jaddress6))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(yoj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jdob)
-                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jaddress))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jaddress1))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(sphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jaddress2)
-                            .addComponent(parent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jaddress5)
-                                    .addComponent(gphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jaddress3)
-                                    .addComponent(pphone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(91, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(puc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(19, 19, 19)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(tenth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(presentsem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(rank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(gname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jaddress4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31))))
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/i9.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(-10, -6, 1370, 590);
 
         jPanel1.add(jPanel2, "card2");
 
@@ -568,8 +474,14 @@ public class Spage extends javax.swing.JFrame {
 
     private void parentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_parentActionPerformed
         // TODO add your handling code here:
-         signup c=new signup();
-        c.checkstring(gname.getText());
+           signup c=new signup();
+       boolean a= c.checkstring(parent.getText());
+       if(a)
+       {
+           JOptionPane.showMessageDialog(null,"Please enter characters , numbers are not allowed");
+           parent.setText(null);
+           parent.requestFocusInWindow();
+       }
                                  
     }//GEN-LAST:event_parentActionPerformed
 
@@ -635,22 +547,51 @@ public class Spage extends javax.swing.JFrame {
         int f4 =dob.getDocument().getLength();
          int f5 =address.getDocument().getLength();
           int f6 =sphone.getDocument().getLength();
+          if(f6!=10)
+            {
+                JOptionPane.showMessageDialog(null, " Phone no has only 10 digits, please enter properly");
+                sphone.setText(null);
+           sphone.requestFocusInWindow();
+                
+            }
            int f7 =parent.getDocument().getLength();
-         int f8 =pphone.getDocument().getLength();   
+         int f8 =pphone.getDocument().getLength(); 
+          if(f8!=10)
+            {
+                JOptionPane.showMessageDialog(null, " Phone no has only 10 digits, please enter properly");
+                pphone.setText(null);
+           pphone.requestFocusInWindow();
+                
+            }
           int f9 =courseid.getDocument().getLength();
            int f10 =branchid.getDocument().getLength();
             int f11 =aadharno.getDocument().getLength();
+           if(f11!=12)
+            {
+                JOptionPane.showMessageDialog(null, " Aadhar no has only 12 digits, please enter properly");
+                aadharno.setText(null);
+           aadharno.requestFocusInWindow();
+                
+            }
+             int f17 =gphone.getDocument().getLength();
+             if(f17!=10)
+            {
+                JOptionPane.showMessageDialog(null, " Phone no has only 10 digits, please enter properly");
+                gphone.setText(null);
+           gphone.requestFocusInWindow();
+                
+            }
                      int f12 =staytype.getDocument().getLength();
            int f13 =presentsem.getDocument().getLength();  
             int f14 =category.getDocument().getLength();
              int f15 =rank.getDocument().getLength();
          int f16 =gname.getDocument().getLength();  
-        int f17 =gphone.getDocument().getLength(); 
+        
          int f18 =age.getDocument().getLength();
           int f19 =yoj.getDocument().getLength();
            int f20 =puc.getDocument().getLength();
             int f21 =tenth.getDocument().getLength();
-        if(f1==0||f2==0||f3==0||f4==0||f5==0||f6==0||f7==0||f8==0||f9==0||f10==0||f11==0||f12==0||f13==0||f14==0||f15==0||f16==0||f17==0||f18==0||f19==0||f20==0||f21==0){
+        if(f1==0||f2==0||f3==0||f4==0||f5==0||f7==0||f9==0||f10==0||f12==0||f13==0||f14==0||f15==0||f16==0||f18==0||f19==0||f20==0||f21==0){
             JOptionPane.showMessageDialog(null, "Please enter the details properly");
         }else{
             try {
@@ -682,6 +623,85 @@ public class Spage extends javax.swing.JFrame {
            gname.requestFocusInWindow();
        }
     }//GEN-LAST:event_gnameKeyReleased
+
+    private void parentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_parentKeyReleased
+        // TODO add your handling code here:
+             signup c=new signup();
+       boolean a= c.checkstring(parent.getText());
+       if(a)
+       {
+           JOptionPane.showMessageDialog(null,"Please enter characters , numbers are not allowed");
+           parent.setText(null);
+           parent.requestFocusInWindow();
+       }
+    }//GEN-LAST:event_parentKeyReleased
+
+    private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
+        // TODO add your handling code here:
+             signup c=new signup();
+       boolean a= c.checkstring(name.getText());
+       if(a)
+       {
+           JOptionPane.showMessageDialog(null,"Please enter characters , numbers are not allowed");
+           name.setText(null);
+           name.requestFocusInWindow();
+       }
+    }//GEN-LAST:event_nameKeyReleased
+
+    private void aadharnoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aadharnoKeyReleased
+        // TODO add your handling code here:
+         signup c=new signup();
+        int f =aadharno.getDocument().getLength();
+         boolean a= c.checknumber(aadharno.getText());
+            
+            if(a){
+                 JOptionPane.showMessageDialog(null, " Characters are not allowed ,please enter numbers");
+                 aadharno.setText(null);
+           aadharno.requestFocusInWindow();
+            }
+        
+    }//GEN-LAST:event_aadharnoKeyReleased
+
+    private void sphoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sphoneKeyReleased
+        // TODO add your handling code here:
+         signup c=new signup();
+        int f =sphone.getDocument().getLength();
+         boolean a= c.checknumber(sphone.getText());
+            
+            if(a){
+                 JOptionPane.showMessageDialog(null, " Characters are not allowed ,please enter numbers");
+                 sphone.setText(null);
+           sphone.requestFocusInWindow();
+            }
+           
+    }//GEN-LAST:event_sphoneKeyReleased
+
+    private void pphoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pphoneKeyReleased
+        // TODO add your handling code here
+            // TODO add your handling code here:
+         signup c=new signup();
+        int f =pphone.getDocument().getLength();
+         boolean a= c.checknumber(pphone.getText());
+           
+            if(a){
+                 JOptionPane.showMessageDialog(null, " Characters are not allowed ,please enter numbers");
+                 pphone.setText(null);
+           pphone.requestFocusInWindow();
+            }
+    }//GEN-LAST:event_pphoneKeyReleased
+
+    private void gphoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gphoneKeyReleased
+        // TODO add your handling code here:    // TODO add your handling code here:
+         signup c=new signup();
+        int f =gphone.getDocument().getLength();
+         boolean a= c.checknumber(gphone.getText());
+           
+            if(a){
+                 JOptionPane.showMessageDialog(null, " Characters are not allowed ,please enter numbers");
+                 gphone.setText(null);
+           gphone.requestFocusInWindow();
+            }
+    }//GEN-LAST:event_gphoneKeyReleased
 
      
     public static void main(String args[]) {
@@ -738,6 +758,8 @@ public class Spage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jaddress;

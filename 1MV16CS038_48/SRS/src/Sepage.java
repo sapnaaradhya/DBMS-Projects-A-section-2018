@@ -7,26 +7,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author DELL
- */
 public class Sepage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Sepage
-     */
     public Sepage() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setBounds(350,100, 698, 399);
     }
 
     /**
@@ -46,16 +32,22 @@ public class Sepage extends javax.swing.JFrame {
         bid = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setLayout(null);
 
         jTxt36.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTxt36.setText("RETRIEVE FACULTY IN A BRANCH");
+        jPanel1.add(jTxt36);
+        jTxt36.setBounds(87, 11, 591, 44);
 
         jTxt37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTxt37.setText("BRANCH ID:");
+        jPanel1.add(jTxt37);
+        jTxt37.setBounds(139, 109, 164, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("SEARCH");
@@ -64,6 +56,8 @@ public class Sepage extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(180, 180, 117, 37);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("BACK");
@@ -72,12 +66,16 @@ public class Sepage extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(420, 180, 93, 37);
 
         bid.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 bidKeyPressed(evt);
             }
         });
+        jPanel1.add(bid);
+        bid.setBounds(313, 112, 143, 30);
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,48 +88,13 @@ public class Sepage extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(jTxt36, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTxt37, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bid, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(232, 232, 232))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(112, 112, 112))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTxt36)
-                .addGap(54, 54, 54)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxt37, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(326, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(110, 240, 452, 112);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/i9.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 690, 420);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +104,7 @@ public class Sepage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
 
         pack();
@@ -152,35 +115,26 @@ public class Sepage extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con=(com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","dolly");
-
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        
-
   try{
-            
-            
             ResultSet rs=null;
             String m=bid.getText();
-        String sql="SELECT faculty_id,faculty_name FROM FACULTY WHERE branch_id='"+m+"'";
-        PreparedStatement pst=con.prepareStatement(sql);   
+       // String sql="SELECT faculty_id,faculty_name FROM FACULTY WHERE branch_id='"+m+"'";
+       // PreparedStatement pst=con.prepareStatement(sql);   
        // pst.setString(1,FID.getText());
 String query1 = "{CALL inc(?)}";
 CallableStatement stmt = con.prepareCall(query1);
 stmt.setString(1, m);
 ResultSet rs1 = stmt.executeQuery();
             table.setModel(DbUtils.resultSetToTableModel(rs1));
-              rs1=pst.executeQuery();
+             // rs1=pst.executeQuery();
+             rs1 = stmt.executeQuery();
               if(!rs1.next())
               {
                   JOptionPane.showMessageDialog(null,"Search not found");
               }
-              
-     
-           
-        
-       
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -208,36 +162,22 @@ ResultSet rs1 = stmt.executeQuery();
         } catch (Exception ex) {
             System.out.println(ex);
         }
-        
-
-  try{
-            
+  try{  
                    ResultSet rs=null;
             String m=bid.getText();
-        String sql="SELECT faculty_id,faculty_name FROM FACULTY WHERE branch_id='"+m+"'";
-        PreparedStatement pst=con.prepareStatement(sql);   
-       // pst.setString(1,FID.getText());
 String query1 = "{CALL inc(?)}";
 CallableStatement stmt = con.prepareCall(query1);
 stmt.setString(1, m);
 ResultSet rs1 = stmt.executeQuery();
             table.setModel(DbUtils.resultSetToTableModel(rs1));
-              rs1=pst.executeQuery();
               if(!rs1.next())
               {
                   JOptionPane.showMessageDialog(null,"Search not found");
               }
-              
-              
-     
-           
-        
-       
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-        
     }//GEN-LAST:event_bidKeyPressed
     }
     /**
@@ -279,6 +219,7 @@ ResultSet rs1 = stmt.executeQuery();
     private javax.swing.JTextField bid;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jTxt36;
