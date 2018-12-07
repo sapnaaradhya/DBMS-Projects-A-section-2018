@@ -18,7 +18,7 @@ public class MySqlConnect {
     public MySqlConnect() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "1234");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lgform", "root", "konda");
             //JOptionPane.showMessageDialog(null,"Connected to Database");
         } catch (Exception ex) {
 
@@ -358,7 +358,7 @@ public class MySqlConnect {
 
         MySqlConnect obj = new MySqlConnect();
         System.out.println(obj);
-          System.out.println(obj.getActivityIdFromActivities("1001"));
+          
         //System.out.println(obj.getStudentDetails("cv"));
         
         System.out.println(obj.createTableStaffLogin());
@@ -370,7 +370,7 @@ public class MySqlConnect {
        // System.out.println(obj.createTableActivities());
         System.out.println(obj.createTableCounseling_details());
         System.out.println(obj.createTableACTIVITIES_details());
-
+        System.out.println(obj.getActivityIdFromActivities("1001"));
     }
 
    public ResultSet getActivities(String usn) throws SQLException {

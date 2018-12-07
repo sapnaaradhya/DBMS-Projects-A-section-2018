@@ -20,8 +20,8 @@ public class AddUser extends javax.swing.JFrame {
      */
     public AddUser() {
         initComponents();
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
+       // Toolkit tk = Toolkit.getDefaultToolkit();
+       // this.setSize(tk.getScreenSize().width, tk.getScreenSize().height);
     }
 
     /**
@@ -35,8 +35,6 @@ public class AddUser extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -48,6 +46,10 @@ public class AddUser extends javax.swing.JFrame {
         u = new javax.swing.JTextField();
         p = new javax.swing.JTextField();
         FacCreate = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -56,39 +58,57 @@ public class AddUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("FACULTY DETAILS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 26, 245, 40));
-
-        jLabel2.setText("Faculty Name :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 84, 86, 32));
-
-        jLabel3.setText("Username      :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 207, 86, 22));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel3.setText("Username     :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 130, 22));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 163, 86, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 204));
         jLabel5.setText("Department   :");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 128, 77, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 130, -1));
 
-        jLabel6.setText("Email-ID         :");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 172, 86, -1));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel6.setText("Email-ID       :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 130, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 204));
         jLabel7.setText("Password      :");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 250, 86, -1));
-        getContentPane().add(n, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 84, 246, -1));
-        getContentPane().add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 125, 246, -1));
-        getContentPane().add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 169, 246, -1));
-        getContentPane().add(u, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 208, 246, -1));
-        getContentPane().add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 247, 246, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 120, -1));
+        getContentPane().add(n, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 450, -1));
+        getContentPane().add(d, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 450, -1));
+        getContentPane().add(e, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 450, -1));
+        getContentPane().add(u, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 450, -1));
+        getContentPane().add(p, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 450, -1));
 
-        FacCreate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FacCreate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         FacCreate.setText("CREATE");
         FacCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FacCreateActionPerformed(evt);
             }
         });
-        getContentPane().add(FacCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 285, 104, -1));
+        getContentPane().add(FacCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 130, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 204));
+        jLabel2.setText("Faculty Name :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 130, -1));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 770, 310));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel1.setText("FACULTY DETAILS");
+        jPanel2.add(jLabel1);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 0, 1250, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -169,6 +189,8 @@ public class AddUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField n;
