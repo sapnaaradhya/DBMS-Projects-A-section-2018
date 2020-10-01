@@ -1,9 +1,9 @@
 
-# DBMS-Projects-A-section-2018
+# DBMS-Projects-A-section-2018 (best project for dbms)
 
-DBMS Projects A-section 2018
+DBMS-Projects 
 
-## Contributors
+# Contributors
 Thanks goes to all of these wonderful people who have contributed to DBMS Projects 2018 - 2019 :
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
